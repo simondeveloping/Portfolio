@@ -1,16 +1,61 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [textColor, setTextColor] = useState("text-white");
+
+  const handleScroll = () => {
+    const sections = document.querySelectorAll(".bg-white, .bg-gray-500");
+    let isWhiteBg = false;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      // Wenn der Abschnitt gerade sichtbar ist
+      if (rect.top <= 0 && rect.bottom >= 0) {
+        if (section.classList.contains("bg-white")) {
+          isWhiteBg = true;
+        }
+      }
+    });
+
+    setTextColor(isWhiteBg ? "text-black" : "text-white");
+  };
+
+  useEffect(() => {
+    handleScroll(); // Überprüfe die Schriftfarbe sofort nach dem Laden
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <nav>
-      <div>
-        <div className="text-center p-4 flex flex-row justify-around text-white hover:">
-          <h1 className=" text-2xl p-4">Login</h1>
+    <nav className={`sticky top-0 ${textColor} z-50`}>
+      <div className="bg-[rgba(159,127,242,0.05)]">
+        <div className="text-center p-4 flex flex-row justify-between xl:text-xl lg:text-base sm:text-sm md:text-sm">
+          <h1>Login</h1>
           <div className="justify-end flex">
-            <div className="flex justify-around space-x-4 items-center gap-8">
+            <button className="sm:block md:hidden lg:hidden xl:hidden flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+            <div className="flex justify-around space-x-4 items-center lg:gap-8 sm:hidden md:hidden lg:flex xl:flex">
               <Link
                 href="/"
-                className="gap-2 flex relative transition-colors text-xl duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +75,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/Portfolio"
-                className="gap-2 flex relative transition-colors text-xl duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +95,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/ThisPage"
-                className="gap-2 flex relative transition-colors text-xl duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -63,14 +108,14 @@ export default function Navbar() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="m20.893 13.393-1.135-1.135a2.252 2.252 0 0 1-.421-.585l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 0 1-1.383-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.411-2.353a2.25 2.25 0 0 0 .286-.76m11.928 9.869A9 9 0 0 0 8.965 3.525m11.928 9.868A9 9 0 1 1 8.965 3.525"
+                    d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
                   />
                 </svg>
-                This Page
+                Projects
               </Link>
               <Link
                 href="/contact"
-                className="gap-2 flex relative transition-colors text-xl duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

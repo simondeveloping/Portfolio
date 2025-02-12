@@ -1,11 +1,11 @@
-import { PiChart } from "./charts/pi-chart";
+import { PiChart } from "./shadcn/pi-chart";
 import {
   faGithub,
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PageNavigation } from "./otherComps/pagination";
+import { PageNavigation } from "./shadcn/pagination";
 
 export default function Home() {
   return (
@@ -18,34 +18,34 @@ export default function Home() {
       </div>
       <div className="flex flex-row items-center gap-10">
         <div className="flex w-[30vw] bg-white h-[10vh] justify-around items-center">
-          <h1 className="text-black text-3xl">
-            About me<span className="text-teal-500">/</span>
+          <h1 className="text-black lg:text-3xl sm:text-base">
+            Links<span className="text-teal-500">/</span>
           </h1>
           <a href="https://www.instagram.com/simonp_25">
             <FontAwesomeIcon
               icon={faInstagram}
-              className="text-red-500 w-8 h-8 animate-[spin_3s_linear_infinite]"
+              className="text-red-500 w-4 h-4 sm:w-6 sm:h-6 md:w-6 md:h-12 lg:w-8 lg:h-8 animate-[spin_3s_linear_infinite]"
               href="https://www.instagram.com/"
             />
           </a>
           <a href="#">
             <FontAwesomeIcon
               icon={faLinkedin}
-              className="text-blue-500 w-8 h-8"
+              className="text-blue-500 w-4 h-4 sm:w-6 sm:h-6 md:w-6 md:h-12 lg:w-8 lg:h-8"
             />
           </a>
           <a href="https://github.com/simondeveloping">
             <FontAwesomeIcon
               icon={faGithub}
-              className="text-lime-300 w-8 h-8 animate-[bounce_1s_ease-in-out_infinite]"
+              className="text-lime-300  w-4 h-4 sm:w-6 sm:h-6 md:w-6 md:h-12 lg:w-8 lg:h-8 animate-[bounce_1s_ease-in-out_infinite]"
             />
           </a>
         </div>
         <div className="flex gap-3">
-          <div className="w-8 h-8 bg-red-200 opacity-0 animate-snake delay-0"></div>
-          <div className="w-8 h-8 bg-blue-200 opacity-0 animate-snake delay-100"></div>
-          <div className="w-8 h-8 bg-green-200 opacity-0 animate-snake delay-200"></div>
-          <div className="w-8 h-8 bg-yellow-200 opacity-0 animate-snake delay-300"></div>
+          <div className="w-8 h-8 bg-white opacity-0 animate-snake delay-0"></div>
+          <div className="w-8 h-8 bg-white opacity-0 animate-snake delay-100"></div>
+          <div className="w-8 h-8 bg-white opacity-0 animate-snake delay-200"></div>
+          <div className="w-8 h-8 bg-blue-200 opacity-0 animate-snake delay-300"></div>
         </div>
       </div>
       <div className="flex h-auto bg-white text-black justify-center p-40">
