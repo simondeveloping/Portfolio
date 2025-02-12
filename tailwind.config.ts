@@ -13,6 +13,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        "2xl": "1536px",
+      },
       keyframes: {
         blink: {
           "0%, 100%": {

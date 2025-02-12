@@ -6,10 +6,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PageNavigation } from "./shadcn/pagination";
+import Overlay from "./components/overlay";
 
 export default function Home() {
   return (
     <div>
+      <Overlay />
       <div className="flex h-screen justify-center items-center flex-grow">
         <div className="text-3xl">
           <span className="animate-blink text-red-400">[ </span>simonp.one/
@@ -59,15 +61,15 @@ export default function Home() {
       <div className="flex h-[10vh] justify-end">
         <div className="w-[30vw] bg-white"></div>
       </div>
-      <div className="flex h-[80vh] w-[100vw] justify-center">
-        <div className="w-[70vw] flex flex-row gap-20">
-          <div className="flex w-[30vw] h-[50vh] flex-col justify-center ">
-            <div className="p-4 text-4xl">
+      <div className="flex md:h-70[vh] w-[100vw] justify-center p-20 h-auto">
+        <div className="md:w-[70vw] flex flex-row gap-20 flex-wrap w-[90vw] lg:h-[80vh] 2xl:h-[50vh]">
+          <div className="flex md:w-[30vw] h-auto flex-col justify-start items-start">
+            <div className="p-4 lg:text-4xl text-xl md:text-1xl xl:text-4xl">
               <span className="animate-blink text-green-400">[ </span>
               Mini-Projects
               <span className="animate-blink text-yellow-400"> ]</span>
             </div>
-            <div className="p-10 text-xl">
+            <div className="md:p-10 md:text-xl text-base">
               This is a section for my own projects. The goal of these projects
               is to simplify everday life. They are still in progress...
             </div>

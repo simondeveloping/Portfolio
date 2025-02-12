@@ -35,11 +35,11 @@ export default function Navbar() {
   }, []);
   return (
     <nav className={`sticky top-0 ${textColor} z-50`}>
-      <div className="bg-[rgba(159,127,242,0.05)]">
-        <div className="text-center p-4 flex flex-row justify-between xl:text-xl lg:text-base sm:text-sm md:text-sm">
+      <div className="bg-transparent">
+        <div className="text-center p-4 flex flex-row justify-between xl:text-base lg:text-base sm:text-sm md:text-sm">
           <h1>Login</h1>
           <div className="justify-end flex">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-5">
               <button
                 className="sm:block md:hidden lg:hidden xl:hidden flex justify-end"
                 onClick={toggleMenu}
@@ -59,10 +59,15 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <div className={`${isMenuOpen ? "block" : "hidden"}`}>
+              <div
+                className={`${
+                  isMenuOpen ? "block" : "hidden"
+                } gap-5 flex flex-col`}
+              >
                 <Link
                   href="/"
                   className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                  onClick={toggleMenu}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -83,6 +88,7 @@ export default function Navbar() {
                 <Link
                   href="/Portfolio"
                   className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                  onClick={toggleMenu}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,6 +109,7 @@ export default function Navbar() {
                 <Link
                   href="/ThisPage"
                   className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                  onClick={toggleMenu}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -123,6 +130,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+                  onClick={toggleMenu}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
