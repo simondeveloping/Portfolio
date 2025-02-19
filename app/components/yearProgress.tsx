@@ -5,7 +5,7 @@ export default function YearProgress() {
   const [percentage, setPercentage] = useState(0);
   const [daysOver, setDaysOver] = useState(0);
   const [maxDays, setMaxDays] = useState(0);
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     function calculatePercentage() {

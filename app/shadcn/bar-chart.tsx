@@ -1,6 +1,5 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
 import { database, ref, get, set } from "@/lib/firebase";
 import { useState } from "react";
@@ -30,7 +29,6 @@ const chartConfig = {
 
 export function VisitorChart() {
   const currentMonth = new Date().getMonth();
-  const currentYear = new Date().getFullYear();
   const visitorStatsRef = ref(database, `visitorStats/`);
 
   // Initialisiere den State, um die geladenen Daten zu speichern
