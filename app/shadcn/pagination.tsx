@@ -82,14 +82,16 @@ export function PageNavigation() {
           {currentBoxes.map((box, index) => (
             <a
               key={index}
-              className="p-5 lg:h-[25vh] lg:w-[25vh] xl:h-[35vh] xl:w-[35vh] md:h-[15vh] md:w-[15vh] h-[20vh] w-[20vh] flex rounded-xl bg-white justify-center items-center text-black text-xl flex-col gap-2 hover:scale-105 transition-transform duration-500 ease-in-out"
+              className="p-5 lg:h-[35vh] lg:w-[35vh] xl:h-[35vh] xl:w-[35vh] md:h-[15vh] md:w-[15vh] h-[20vh] w-[20vh] flex rounded-xl bg-white justify-center items-center text-black text-xl flex-col gap-2 hover:scale-105 transition-transform duration-500 ease-in-out"
               href={box.link}
             >
               <div className="flex flex-row">
                 {box.name}{" "}
-                <span className="text-cyan-500 md:text-2xl text-base">/</span>
+                <span className="text-cyan-500 md:text-2xl lg:text-xl text-base">
+                  /
+                </span>
               </div>
-              <div className="md:text-base text-sm">{box.description}</div>
+              <div className="md:text-sm text-sm">{box.description}</div>
             </a>
           ))}
         </div>

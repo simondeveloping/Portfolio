@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ModeToggle } from "./mode-picker";
 
 export default function Navbar() {
   const [textColor, setTextColor] = useState("text-white");
@@ -38,6 +39,7 @@ export default function Navbar() {
       <div className="bg-transparent">
         <div className="text-center p-4 flex flex-row justify-between xl:text-base lg:text-base sm:text-sm md:text-sm">
           <h1>Login</h1>
+          <ModeToggle />
           <div className="justify-end flex">
             <div className="flex flex-col gap-5">
               <button

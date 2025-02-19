@@ -5,6 +5,7 @@ import {
   onValue,
   set,
   runTransaction,
+  get,
 } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -32,4 +33,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
-export { database, ref, onValue, set, runTransaction };
+export { database, ref, onValue, set, runTransaction, get };

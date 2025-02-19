@@ -4,10 +4,10 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PageNavigation } from "./shadcn/pagination";
 import Overlay from "./components/overlay";
-
+import YearProgress from "./components/yearProgress";
+import { VisitorChart } from "./shadcn/bar-chart";
 export default function Home() {
   return (
     <div>
@@ -19,29 +19,8 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-row items-center gap-10">
-        <div className="flex w-[30vw] bg-white h-[10vh] justify-around items-center">
-          <h1 className="text-black lg:text-3xl sm:text-base">
-            Links<span className="text-teal-500">/</span>
-          </h1>
-          <a href="https://www.instagram.com/simonp_25">
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className="text-red-500 w-4 h-4 sm:w-6 sm:h-6 md:w-6 md:h-12 lg:w-8 lg:h-8 animate-[spin_3s_linear_infinite]"
-              href="https://www.instagram.com/"
-            />
-          </a>
-          <a href="#">
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="text-blue-500 w-4 h-4 sm:w-6 sm:h-6 md:w-6 md:h-12 lg:w-8 lg:h-8"
-            />
-          </a>
-          <a href="https://github.com/simondeveloping">
-            <FontAwesomeIcon
-              icon={faGithub}
-              className="text-lime-300  w-4 h-4 sm:w-6 sm:h-6 md:w-6 md:h-12 lg:w-8 lg:h-8 animate-[bounce_1s_ease-in-out_infinite]"
-            />
-          </a>
+        <div className="flex w-[30vw] bg-white h-auto justify-center items-center flex-wrap">
+          <YearProgress />
         </div>
         <div className="flex gap-3">
           <div className="w-8 h-8 bg-white opacity-0 animate-snake delay-0"></div>
@@ -50,9 +29,11 @@ export default function Home() {
           <div className="w-8 h-8 bg-blue-200 opacity-0 animate-snake delay-300"></div>
         </div>
       </div>
-      <div className="flex h-auto bg-white text-black justify-center p-40">
+      <div className="flex h-auto bg-white text-black justify-center p-20">
         <div className="flex justify-between w-[70vw] items-center">
-          <div className="">testsets</div>
+          <div className="text-2xl w-[30vw]">
+            <VisitorChart />
+          </div>
           <div className="justify-end ">
             <PiChart />
           </div>
@@ -64,12 +45,12 @@ export default function Home() {
       <div className="flex md:h-70[vh] w-[100vw] justify-center p-20 h-auto">
         <div className="md:w-[70vw] flex flex-row gap-20 flex-wrap w-[90vw] lg:h-[80vh] 2xl:h-[50vh]">
           <div className="flex md:w-[30vw] h-auto flex-col justify-start items-start">
-            <div className="p-4 lg:text-4xl text-xl md:text-1xl xl:text-4xl">
+            <div className="p-4 lg:text-3xl text-xl md:text-1xl 2xl:text-4xl">
               <span className="animate-blink text-green-400">[ </span>
               Mini-Projects
               <span className="animate-blink text-yellow-400"> ]</span>
             </div>
-            <div className="md:p-10 md:text-xl text-base">
+            <div className="md:p-10 md:text-base text-base 2xl:text-2xl">
               This is a section for my own projects. The goal of these projects
               is to simplify everday life. They are still in progress...
             </div>
@@ -79,6 +60,11 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="h-[10vh] flex flex-row">
+        <div className="border-t-2 border-zinc-600 border-r-2 h-100 w-[30vw]"></div>
+        <div className="border-b-2 border-zinc-600 w-[70vw] h-100"></div>
+      </div>
+      <div className="h-screen"></div>
     </div>
   );
 }
