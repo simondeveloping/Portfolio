@@ -61,7 +61,6 @@ export function VisitorChart() {
                 [monthKey]: visitor + 1,
               });
             }
-            console.log("Visitor data for", monthData.month, ":", visitor);
             return { ...monthData, Visitors: visitor };
           });
           setChartData(updatedChartData);

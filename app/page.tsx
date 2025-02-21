@@ -1,9 +1,10 @@
+"use client";
 import { PiChart } from "./shadcn/pi-chart";
-
 import { PageNavigation } from "./shadcn/pagination";
 import Overlay from "./components/overlay";
 import YearProgress from "./components/yearProgress";
 import { VisitorChart } from "./shadcn/bar-chart";
+import EmailReminder from "./components/EmailReminder";
 export default function Home() {
   return (
     <div>
@@ -60,7 +61,9 @@ export default function Home() {
         <div className="border-t-2 border-zinc-600 border-r-2 h-100 w-[30vw]"></div>
         <div className="border-b-2 border-zinc-600 w-[70vw] h-100"></div>
       </div>
-      <div className="h-screen"></div>
+      <div className="h-screen bg-gray-900">
+        <EmailReminder />
+      </div>
     </div>
   );
 }
