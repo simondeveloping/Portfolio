@@ -68,7 +68,7 @@ export default function MiniProjects() {
       [tag]: !prev[tag],
     }));
   };
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     console.log(e.target.value);
   };

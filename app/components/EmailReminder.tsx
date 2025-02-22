@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import DatePicker from "./datePicker";
 export default function EmailReminder() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -9,10 +8,16 @@ export default function EmailReminder() {
     message: "",
     currentDate: new Date(),
   });
-  const handleChange = (e) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
     setFormData((prevData) => ({
       ...prevData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
@@ -25,6 +30,7 @@ export default function EmailReminder() {
       body: JSON.stringify(formData),
     });
     const data = await response.json();
+    console.log(data);
   };
   return (
     <div>
@@ -33,7 +39,6 @@ export default function EmailReminder() {
           <div className="w-[30vw] h-4xl">
             <h1 className="text-4xl">Email Reminder</h1>
             <p>This is a reminder for anything you want</p>
-            <DatePicker />
           </div>
           <div className="w-[70vw] flex justify-center text-white flex-grow">
             <div className="w-[40vw] border rounded-xl border-gray-300 h-auto bg-gray-900 flex flex-col gap-4">
