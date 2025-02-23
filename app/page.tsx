@@ -4,7 +4,6 @@ import { PageNavigation } from "./shadcn/pagination";
 import Overlay from "./components/overlay";
 import YearProgress from "./components/yearProgress";
 import { VisitorChart } from "./shadcn/bar-chart";
-import EmailReminder from "./components/EmailReminder";
 export default function Home() {
   return (
     <div>
