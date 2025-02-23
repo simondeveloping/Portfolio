@@ -32,7 +32,7 @@ export default function MiniProjects() {
         "This is for people who want to approach someone but don't know how :)",
       pic: "/pinguin.jpg",
       tags: ["JustForFun", "Private", "InProgress", "Useful"],
-      link: "/MiniProjects",
+      link: "https://simonp.one/pinguin/pinguin",
     },
     {
       id: "3",
@@ -55,7 +55,7 @@ export default function MiniProjects() {
       name: "test",
       description: "This is for testing purposes",
       pic: "/notyet.webp",
-      tags: ["Private", "Just for fun"],
+      tags: ["Private", "JustForFun"],
       link: "/MiniProjects",
     },
     {
@@ -63,7 +63,7 @@ export default function MiniProjects() {
       name: "test",
       description: "This is for testing purposes",
       pic: "/notyet.webp",
-      tags: ["Private", "Just for fun"],
+      tags: ["Private", "JustForFun"],
       link: "/MiniProjects",
     },
   ];
@@ -73,16 +73,16 @@ export default function MiniProjects() {
       tags: "JustForFun",
       color: "bg-blue-200",
     },
-    { id: "2", tags: "Private", color: "bg-red-200" },
-    { id: "3", tags: "Useful", color: "bg-orange-400" },
-    { id: "4", tags: "Attached", color: "bg-red-400" },
-    { id: "5", tags: "InProgress", color: "bg-yellow-400" },
+    { id: "2", tags: "Private", color: "bg-violet-200" },
+    { id: "3", tags: "Useful", color: "bg-orange-200" },
+    { id: "4", tags: "Attached", color: "bg-red-200" },
+    { id: "5", tags: "InProgress", color: "bg-yellow-200" },
     { id: "6", tags: "Done", color: "bg-green-200" },
   ];
   const tagsColor: { [key: string]: string } = {
-    "Just for fun": "border-blue-200",
+    JustForFun: "border-blue-200",
     Private: "border-red-200",
-    Useful: "border-orange-400",
+    Useful: "border-orange-200",
   };
   const toggletagsSelection = (tags: string) => {
     setSelectedtags((prev) => ({
@@ -127,12 +127,12 @@ export default function MiniProjects() {
     });
   }
   return (
-    <div>
+    <div className="dark:bg-black">
       <div className="flex flex-row justify-around">
         <div className="w-2/4 h-auto relative">
           <div className="sticky top-20 flex flex-col gap-10 justify-start items-center left:0">
             <div className="">
-              <h1 className="text-lg flex flex-row gap-1">
+              <h1 className="text-lg flex flex-row gap-1 text-black dark:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -159,7 +159,9 @@ export default function MiniProjects() {
               ></input>
             </div>
             <div className="gap-3 flex flex-col">
-              <h1 className="text-xl">Select tags</h1>
+              <h1 className="text-xl text-black dark:text-white">
+                Select tags
+              </h1>
               {tags.map((tags) => (
                 <div
                   key={tags.id}
@@ -175,7 +177,7 @@ export default function MiniProjects() {
                 </div>
               ))}
               <button
-                className="border rounded-xl hover:scale-105 shadow-sm shadow-white"
+                className="border rounded-xl hover:scale-105 shadow-sm dark:shadow-white text-black dark:text-white shadow-black"
                 onClick={clearAll}
               >
                 Clear all
@@ -189,16 +191,18 @@ export default function MiniProjects() {
               <div
                 className={`cursor-pointer border-2 ${
                   tagsColor[box.tags[0]]
-                } rounded-xl duration-300 hover:shadow-md hover:shadow-white hover:scale-105`}
+                } rounded-xl duration-300 hover:shadow-md dark:hover:shadow-white hover:scale-105 hover:shadow-black shadow-xl`}
               >
-                <div className="2xl:w-[40vw] 2xl:h-[30vh] xl:w-[50vw] xl:h-[45vh] w-[50vw] h-[30vh] p-6 flex flex-row max-h-screen-lg">
+                <div className="2xl:w-[40vw]  xl:w-[50vw]  w-[50vw] h-auto p-6 flex flex-row max-h-screen-lg">
                   <div className="w-1/2 flex gap-5 flex-col justify-around">
-                    <h1 className="2xl:text-3xl text-2xl">{box.name}</h1>
-                    <p className="2xl:text-xl xl:text-base sm:text-sm">
+                    <h1 className="2xl:text-3xl text-2xl text-black dark:text-white">
+                      {box.name}
+                    </h1>
+                    <p className="2xl:text-xl xl:text-base sm:text-sm text-black dark:text-white">
                       {box.description}
                     </p>
                     <div className="flex justify-start items-start w-full gap-2 flex-wrap">
-                      <h1 className="">Tags: </h1>
+                      <h1 className="text-black dark:text-white">Tags: </h1>
                       {box.tags.map((tag) => {
                         const tagColor = tags.find(
                           (t) => t.tags === tag
@@ -221,7 +225,7 @@ export default function MiniProjects() {
                       width={400}
                       height={500}
                       alt="Test"
-                      className="hover:scale-110 transform transition-transform duration-300"
+                      className="max-h-[200px] max-w-[200px] hover:scale-110 transform transition-transform duration-300"
                     />
                   </div>
                 </div>
@@ -231,19 +235,21 @@ export default function MiniProjects() {
         </div>
         <div className="relative w-2/4 justify-center">
           <div className=" flex sticky top-20 flex-col gap-4 items-center">
-            <h1 className="text-3xl">
+            <h1 className="text-3xl text-black dark:text-white">
               <u>Overview</u>
             </h1>
-            <h1 className="text-base">
+            <h1 className="text-base text-black dark:text-white">
               Total projects:{" "}
               <span className="text-blue-500">{boxes.length}</span>
             </h1>
-            <h1 className="text-base">
+            <h1 className="text-base text-black dark:text-white">
               Projects shown:{" "}
               <span className="text-blue-500">{filteredBoxes.length}</span>
             </h1>
-            <h1 className="text-lg">Tags: Number of projects</h1>
-            <ul className="text-white bg-white bg-opacity-10 p-4 rounded-xl flex gap-2 flex-col p-10">
+            <h1 className="text-lg text-black dark:text-white">
+              Tags: Number of projects
+            </h1>
+            <ul className="text-black bg-black dark:text-white dark:bg-gray-500 bg-opacity-10 p-4 rounded-xl flex gap-2 flex-col p-10">
               {tags.map((tag) => (
                 <li key={tag.id} className="flex flex-row gap-2">
                   <div
@@ -251,7 +257,7 @@ export default function MiniProjects() {
                   >
                     {tag.tags}
                   </div>
-                  <h1>
+                  <h1 className="text-black dark:text-white">
                     :{" "}
                     {boxes.filter((box) => box.tags.includes(tag.tags)).length}
                   </h1>

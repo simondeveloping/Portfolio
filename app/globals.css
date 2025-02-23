@@ -4,8 +4,17 @@
 
 body {
   font-family: monospace;
-  background-color: black;
+  background-color: white;
   color: white;
+}
+.dark body {
+  background-color: black;
+  color: black;
+}
+
+html {
+  scrollbar-width: thin; /* "auto", "thin" oder "none" */
+  scrollbar-color: #6d7276 #f3f4f600;
 }
 
 @layer base {
@@ -25,10 +34,12 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

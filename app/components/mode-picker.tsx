@@ -28,7 +28,7 @@ export function ModeToggle(): React.ReactNode {
 
   return (
     <Button variant="ghost" size="icon" onClick={handleTheme}>
-      <Moon className="absolute !h-[1.6rem] !w-[1.6rem] rotate-0 scale-100 transition-all text-white hover:text-black active:text-black dark:rotate-0 dark:scale-0 text-violet-600" />
+      <Moon className="absolute !h-[1.6rem] !w-[1.6rem] rotate-0 scale-100 transition-all text-white active:text-black dark:rotate-0 dark:scale-0 text-violet-700" />
       <Sun className="!h-[1.6rem] !w-[1.6rem] rotate-0 scale-0 transition-all dark:-rotate-100 dark:scale-100 text-yellow-300" />
       <span className="sr-only">Toggle theme</span>
     </Button>

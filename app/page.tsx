@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div>
       <Overlay />
-      <div className="flex h-screen justify-center items-center flex-grow">
-        <div className="text-3xl">
+      <div className="flex h-screen justify-center items-center flex-grow bg-white dark:bg-black">
+        <div className="text-3xl text-black dark:text-white">
           <span className="animate-blink text-red-400">[ </span>simonp.one/
           <span className="animate-blink text-blue-400"> ]</span>
         </div>
@@ -61,9 +61,7 @@ export default function Home() {
         <div className="border-t-2 border-zinc-600 border-r-2 h-100 w-[30vw]"></div>
         <div className="border-b-2 border-zinc-600 w-[70vw] h-100"></div>
       </div>
-      <div className="h-screen bg-gray-900">
-        <EmailReminder />
-      </div>
+      <div className="h-screen bg-gray-900"></div>
     </div>
   );
 }

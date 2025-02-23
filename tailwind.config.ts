@@ -12,6 +12,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        border: "hsl(0, 0%, 83%)",
+        ring: "hsl(220, 90%, 50%)",
       },
       screens: {
         "2xl": "1536px",

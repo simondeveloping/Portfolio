@@ -2,6 +2,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-picker";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Settings } from "lucide-react";
 
 export default function Navbar() {
   const [textColor, setTextColor] = useState("text-white");
@@ -35,11 +44,35 @@ export default function Navbar() {
     };
   }, []);
   return (
-    <nav className={`sticky top-0 ${textColor} z-50`}>
-      <div className="bg-transparent">
+    <nav className={`sticky top-0 ${textColor} z-50 bg-transparent`}>
+      <div className="bg-transparent text-black dark:text-white">
         <div className="text-center p-4 flex flex-row justify-between xl:text-base lg:text-base sm:text-sm md:text-sm">
+          <Sheet>
+            <SheetTrigger>
+              <Settings className="transition-transform duration-300 hover:rotate-45 w-7 h-7" />
+            </SheetTrigger>
+            <SheetContent side="left" className="bg-white dark:bg-black">
+              <SheetHeader>
+                <SheetTitle className="text-black dark:text-white">
+                  Settings
+                </SheetTitle>
+                <SheetDescription className="text-black dark:text-white">
+                  Customize your experience
+                </SheetDescription>
+                <div className="">
+                  <ul className="">
+                    <li className="flex items-center flex-row">
+                      <h1 className="text-black dark:text-white text-xl">
+                        Light / Dark Mode:{" "}
+                      </h1>
+                      <ModeToggle />
+                    </li>
+                  </ul>
+                </div>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
           <h1>Login</h1>
-          <ModeToggle />
           <div className="justify-end flex">
             <div className="flex flex-col gap-5">
               <button
