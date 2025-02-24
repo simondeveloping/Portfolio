@@ -86,14 +86,9 @@ export default function Navbar() {
                 </SheetTrigger>
                 <SheetContent>
                   <SheetHeader>
-                    <SheetTitle className="text-white ">
-                      Are you absolutely sure?
-                    </SheetTitle>
-                    <SheetDescription className="text-white">
-                      This action cannot be undone. This will permanently delete
-                      your account and remove your data from our servers.
-                    </SheetDescription>
-                    <div className="flex flex-col gap-5">
+                    <SheetTitle className="text-white ">Navigation</SheetTitle>
+                    <SheetDescription className="text-white"></SheetDescription>
+                    <div className="flex flex-col gap-5 text-white">
                       <Link
                         href="/"
                         className="flex flex-row gap-3 items-center"
