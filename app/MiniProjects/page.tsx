@@ -70,20 +70,41 @@ export default function MiniProjects() {
   const tags = [
     {
       id: "1",
-      tags: "JustForFun",
-      color: "bg-blue-200",
+      tag: "JustForFun",
+      bgColor: "bg-blue-200",
+      borderColor: "border-blue-200",
     },
-    { id: "2", tags: "Private", color: "bg-violet-200" },
-    { id: "3", tags: "Useful", color: "bg-orange-200" },
-    { id: "4", tags: "Attached", color: "bg-red-200" },
-    { id: "5", tags: "InProgress", color: "bg-yellow-200" },
-    { id: "6", tags: "Done", color: "bg-green-200" },
+    {
+      id: "2",
+      tag: "Private",
+      bgColor: "bg-violet-200",
+      borderColor: "border-violet-200",
+    },
+    {
+      id: "3",
+      tag: "Useful",
+      bgColor: "bg-orange-200",
+      borderColor: "border-orange-200",
+    },
+    {
+      id: "4",
+      tag: "Attached",
+      bgColor: "bg-red-200",
+      borderColor: "border-red-200",
+    },
+    {
+      id: "5",
+      tag: "InProgress",
+      bgColor: "bg-yellow-200",
+      borderColor: "border-yellow-200",
+    },
+    {
+      id: "6",
+      tag: "Done",
+      bgColor: "bg-green-200",
+      borderColor: "border-green-200",
+    },
   ];
-  const tagsColor: { [key: string]: string } = {
-    JustForFun: "border-blue-200",
-    Private: "border-red-200",
-    Useful: "border-orange-200",
-  };
   const toggletagsSelection = (tags: string) => {
     setSelectedtags((prev) => ({
       ...prev,
@@ -102,6 +123,19 @@ export default function MiniProjects() {
       }, {} as { [key: string]: boolean });
       return updatedTags;
     });
+  };
+  const highlightText = (text: string, search: string) => {
+    if (!search) return text;
+    const parts = text.split(new RegExp(`(${search})`, "gi"));
+    return parts.map((part, index) =>
+      part.toLowerCase() === search.toLowerCase() ? (
+        <span key={index} className="bg-yellow-600">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
   };
   const filteredBoxes = boxes.filter((box) => {
     return (
@@ -128,8 +162,8 @@ export default function MiniProjects() {
   }
   return (
     <div className="dark:bg-black">
-      <div className="flex flex-row justify-around">
-        <div className="w-2/4 h-auto relative">
+      <div className="flex lg:flex-row flex-col justify-around">
+        <div className="lg:w-2/4 w-full h-auto relative">
           <div className="sticky top-20 flex flex-col gap-10 justify-start items-center left:0">
             <div className="">
               <h1 className="text-lg flex flex-row gap-1 text-black dark:text-white">
@@ -158,22 +192,22 @@ export default function MiniProjects() {
                 placeholder="Search"
               ></input>
             </div>
-            <div className="gap-3 flex flex-col">
+            <div className="gap-3 flex flex-col hidden lg:flex">
               <h1 className="text-xl text-black dark:text-white">
                 Select tags
               </h1>
               {tags.map((tags) => (
                 <div
                   key={tags.id}
-                  className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.color} rounded-xl`}
+                  className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.bgColor} rounded-xl`}
                 >
                   <input
                     type="checkbox"
-                    checked={selectedtags[tags.tags]}
-                    onChange={() => toggletagsSelection(tags.tags)}
+                    checked={selectedtags[tags.tag]}
+                    onChange={() => toggletagsSelection(tags.tag)}
                     className=""
                   ></input>
-                  <h1>{tags.tags}</h1>
+                  <h1>{tags.tag}</h1>
                 </div>
               ))}
               <button
@@ -185,56 +219,59 @@ export default function MiniProjects() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-10 justify-start items-center p-4">
-          {filteredBoxes.map((box) => (
-            <Link key={box.id} className="w-full h-auto" href={box.link}>
-              <div
-                className={`cursor-pointer border-2 ${
-                  tagsColor[box.tags[0]]
-                } rounded-xl duration-300 hover:shadow-md dark:hover:shadow-white hover:scale-105 hover:shadow-black shadow-xl`}
-              >
-                <div className="2xl:w-[40vw]  xl:w-[50vw]  w-[50vw] h-auto p-6 flex flex-row max-h-screen-lg">
-                  <div className="w-1/2 flex gap-5 flex-col justify-around">
-                    <h1 className="2xl:text-3xl text-2xl text-black dark:text-white">
-                      {box.name}
-                    </h1>
-                    <p className="2xl:text-xl xl:text-base sm:text-sm text-black dark:text-white">
-                      {box.description}
-                    </p>
-                    <div className="flex justify-start items-start w-full gap-2 flex-wrap">
-                      <h1 className="text-black dark:text-white">Tags: </h1>
-                      {box.tags.map((tag) => {
-                        const tagColor = tags.find(
-                          (t) => t.tags === tag
-                        )?.color;
-                        return (
-                          <div
-                            key={tag}
-                            className={`flex gap-2 ${tagColor} text-black rounded-xl p-0.5 text-sm`}
-                          >
-                            {tag}
-                          </div>
-                        );
-                      })}
+        <div className="flex flex-col lg:gap-10 gap-4 justify-start items-center p-4">
+          {filteredBoxes.map((box) => {
+            const borderColor = tags.find(
+              (t) => t.tag === box.tags[0]
+            )?.borderColor;
+            return (
+              <Link key={box.id} className="w-full h-auto" href={box.link}>
+                <div
+                  className={`cursor-pointer border-2 ${borderColor} rounded-xl duration-300 hover:shadow-md dark:hover:shadow-white hover:scale-105 hover:shadow-black shadow-xl`}
+                >
+                  <div className="2xl:w-[40vw]  xl:w-[50vw]  lg:w-[50vw] w-full h-auto p-6 flex flex-row max-h-screen-lg">
+                    <div className="lg:w-1/2 w-full flex gap-5 flex-col justify-around">
+                      <h1 className="2xl:text-3xl text-2xl text-black dark:text-white">
+                        {highlightText(box.name, search)}
+                      </h1>
+                      <p className="2xl:text-xl xl:text-base sm:text-sm text-black dark:text-white">
+                        {highlightText(box.description, search)}
+                      </p>
+                      <div className="flex justify-start items-start w-full gap-2 flex-wrap">
+                        <h1 className="text-black dark:text-white">Tags: </h1>
+                        {box.tags.map((tag) => {
+                          const tagColor = tags.find(
+                            (t) => t.tag === tag
+                          )?.bgColor;
+                          return (
+                            <div
+                              key={tag}
+                              className={`flex gap-2 ${tagColor} text-black rounded-xl p-0.5 text-sm`}
+                            >
+                              {tag}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="w-1/2 bg-cover bg-no-repeat overflow-hidden relative lg:flex justify-center items-center flex flex-col gap-4 hidden">
+                      <Image
+                        src={box.pic}
+                        width={400}
+                        height={500}
+                        alt="Test"
+                        className="lg:w-full lg:h-full lg:max-h-[500px] lg:max-w-[500px] max-h-[200px] max-w-[200px] object-cover hover:scale-110 transform transition-transform duration-300"
+                      />
                     </div>
                   </div>
-
-                  <div className="w-1/2 bg-cover bg-no-repeat overflow-hidden relative flex justify-center items-center flex flex-col gap-4">
-                    <Image
-                      src={box.pic}
-                      width={400}
-                      height={500}
-                      alt="Test"
-                      className="max-h-[200px] max-w-[200px] hover:scale-110 transform transition-transform duration-300"
-                    />
-                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
-        <div className="relative w-2/4 justify-center">
-          <div className=" flex sticky top-20 flex-col gap-4 items-center">
+        <div className="relative w-2/4 justify-center ">
+          <div className=" flex sticky top-20 flex-col gap-4 items-center hidden lg:flex">
             <h1 className="text-3xl text-black dark:text-white">
               <u>Overview</u>
             </h1>
@@ -253,13 +290,12 @@ export default function MiniProjects() {
               {tags.map((tag) => (
                 <li key={tag.id} className="flex flex-row gap-2">
                   <div
-                    className={`flex gap-2 ${tag.color} text-black rounded-xl p-1 text-sm`}
+                    className={`flex gap-2 ${tag.bgColor} text-black rounded-xl p-1 text-sm`}
                   >
-                    {tag.tags}
+                    {tag.tag}
                   </div>
                   <h1 className="text-black dark:text-white">
-                    :{" "}
-                    {boxes.filter((box) => box.tags.includes(tag.tags)).length}
+                    : {boxes.filter((box) => box.tags.includes(tag.tag)).length}
                   </h1>
                 </li>
               ))}
