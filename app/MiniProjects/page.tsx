@@ -2,6 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { Search } from "lucide-react";
+import { Switch } from "@radix-ui/react-switch";
+
 export default function MiniProjects() {
   const [search, setSearch] = useState("");
   const [selectedtags, setSelectedtags] = useState<{
@@ -167,27 +170,13 @@ export default function MiniProjects() {
           <div className="sticky top-20 flex flex-col gap-10 justify-start items-center left:0">
             <div className="">
               <h1 className="text-lg flex flex-row gap-1 text-black dark:text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-search"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>{" "}
+                <Search />
                 Search for project
               </h1>
               <input
                 onChange={handleChange}
                 value={search}
-                className="text-black dark:text-white border-2 border-violet-500 rounded-xl h-10 w-64 p-4 focus:outline-none focus:ring-4 focus:ring-violet-500 focus:border-violet-500"
+                className="text-black dark:text-white border-2 border-violet-500 rounded-xl h-10 w-64 p-4 focus:outline-none focus:ring-1 focus:ring-violet-500 focus:border-violet-500"
                 type="text"
                 placeholder="Search"
               ></input>
@@ -199,14 +188,13 @@ export default function MiniProjects() {
               {tags.map((tags) => (
                 <div
                   key={tags.id}
-                  className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.bgColor} rounded-xl`}
+                  className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.bgColor} rounded-xl shadow-black shadow-sm`}
                 >
-                  <input
-                    type="checkbox"
+                  <Switch
                     checked={selectedtags[tags.tag]}
                     onChange={() => toggletagsSelection(tags.tag)}
                     className=""
-                  ></input>
+                  ></Switch>
                   <h1>{tags.tag}</h1>
                 </div>
               ))}

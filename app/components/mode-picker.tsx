@@ -1,9 +1,9 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 export function ModeToggle(): React.ReactNode {
   const [mounted, setMounted] = useState(false);
@@ -27,10 +27,12 @@ export function ModeToggle(): React.ReactNode {
   }
 
   return (
-    <Button variant="ghost" size="icon" onClick={handleTheme}>
-      <Moon className="absolute !h-[1.6rem] !w-[1.6rem] rotate-0 scale-100 transition-all text-white active:text-black dark:rotate-0 dark:scale-0 text-violet-700" />
-      <Sun className="!h-[1.6rem] !w-[1.6rem] rotate-0 scale-0 transition-all dark:-rotate-100 dark:scale-100 text-yellow-300" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <div>
+      <Switch id="Modetoggle" onClick={handleTheme}>
+        {" "}
+        <span className="absolute left-1 top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200 transform checked:translate-x-5 dark:bg-gray-800"></span>
+      </Switch>
+      <Label htmlFor="Modetoggle"></Label>
+    </div>
   );
 }

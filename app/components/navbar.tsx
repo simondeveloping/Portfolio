@@ -56,18 +56,17 @@ export default function Navbar() {
             <SheetTrigger>
               <Settings className="transition-transform duration-300 hover:rotate-45 w-5 h-5" />
             </SheetTrigger>
-            <SheetContent side="left" className="bg-white dark:bg-black">
+            <SheetContent
+              side="left"
+              className="bg-sky-200 dark:bg-sky-800 text-black dark:text-white"
+            >
               <SheetHeader>
-                <SheetTitle className="text-black dark:text-white">
-                  Settings
-                </SheetTitle>
-                <SheetDescription className="text-black dark:text-white">
-                  Customize your experience
-                </SheetDescription>
+                <SheetTitle>Settings</SheetTitle>
+                <SheetDescription>Customize your experience</SheetDescription>
                 <div className="">
                   <ul className="">
-                    <li className="flex items-center flex-row">
-                      <h1 className="text-black dark:text-white text-xl">
+                    <li className="flex items-center flex-row gap-2">
+                      <h1 className="text-black dark:text-white lg:text-xl text-lg">
                         Light / Dark Mode:{" "}
                       </h1>
                       <ModeToggle />
@@ -84,11 +83,11 @@ export default function Navbar() {
                 <SheetTrigger>
                   <Menu />
                 </SheetTrigger>
-                <SheetContent>
+                <SheetContent className="text-black dark:text-white">
                   <SheetHeader>
-                    <SheetTitle className="text-white ">Navigation</SheetTitle>
-                    <SheetDescription className="text-white"></SheetDescription>
-                    <div className="flex flex-col gap-5 text-white">
+                    <SheetTitle>Navigation</SheetTitle>
+                    <SheetDescription></SheetDescription>
+                    <div className="flex flex-col gap-5 ">
                       <Link
                         href="/"
                         className="flex flex-row gap-3 items-center"

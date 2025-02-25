@@ -22,7 +22,7 @@ export default function EmailReminder() {
   };
 
   const sendMail = async () => {
-    const response = await fetch("/api/send", {
+    const response = await fetch("/api/sendEmailNow", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
