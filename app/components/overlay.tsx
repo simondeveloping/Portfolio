@@ -1,6 +1,4 @@
 "use client";
-import { faBold } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
 export default function Overlay() {

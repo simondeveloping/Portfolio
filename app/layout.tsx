@@ -5,7 +5,6 @@ import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-provider";
 import React from "react";
 import { Montserrat } from "next/font/google";
-import Overlay from "./components/overlay";
 
 export const metadata: Metadata = {
   title: "simonp",

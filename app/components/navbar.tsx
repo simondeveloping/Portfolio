@@ -16,6 +16,9 @@ import {
   User,
   TerminalSquare,
   MessageCircleMore,
+  FolderGit,
+  Link2,
+  Star,
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,6 +31,7 @@ import { faEnvelope, faFile } from "@fortawesome/free-solid-svg-icons";
 export default function Navbar() {
   // const [textColor, setTextColor] = useState("text-white");
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [linksOpen, setLinksOpen] = useState(false);
 
   /*
   const handleScroll = () => {
@@ -63,7 +67,73 @@ useEffect(() => {
       <div className="dark:dark:bg-[#1b1b1b] bg-white text-black dark:text-white lg:flex lg:justify-center ">
         <div className="text-center p-9 flex flex-row lg:justify-around justify-between xl:text-lg lg:text-base sm:text-sm md:text-sm lg:w-[100vw]">
           <div className="flex flex-row justify-center lg:w-[30vw]">
-            <div className="gap-4 flex flex-row items-start">
+            <div className="flex lg:hidden">
+              <Sheet open={linksOpen} onOpenChange={setLinksOpen}>
+                <SheetTrigger>
+                  <Star />
+                </SheetTrigger>
+                <SheetContent
+                  side={"left"}
+                  className="text-black dark:text-white"
+                >
+                  <SheetHeader>
+                    <SheetTitle>Important</SheetTitle>
+                    <SheetDescription></SheetDescription>
+                    <div className="flex flex-col gap-5">
+                      <Link
+                        href="/Portfolio"
+                        className="flex flex-row gap-3 items-center"
+                        onClick={() => setLinksOpen(false)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="h-[1.6rem] w-[1.6rem] p-1"
+                        />
+                        <h1 className="text-2xl">Github</h1>
+                      </Link>
+                      <Link
+                        href="/MiniProjects"
+                        className="flex flex-row gap-3 items-center"
+                        onClick={() => setLinksOpen(false)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faLinkedin}
+                          className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
+                        />
+                        <h1 className="text-2xl">LinkedIn</h1>
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className="flex flex-row gap-3 items-center"
+                        onClick={() => setLinksOpen(false)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faEnvelope}
+                          className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
+                        />
+                        <h1 className="text-2xl">Mail</h1>
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className="flex flex-row gap-3 items-center"
+                        onClick={() => setLinksOpen(false)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faInstagram}
+                          className="h-[1.6rem] w-[1.6rem] text-red-400 p-1"
+                        />
+                        <h1 className="text-2xl">Instagram</h1>
+                      </Link>
+                    </div>
+                    <div className="relative left-0 top-10 flex items-center gap-5">
+                      <ModeToggle />
+                      <h1>Light / Dark mode</h1>
+                    </div>
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
+            </div>
+            <div className="gap-4 flex-row items-start lg:flex hidden">
               <ModeToggle />
               <Link href="/">
                 <FontAwesomeIcon
@@ -133,12 +203,12 @@ useEffect(() => {
                         <h1 className="text-2xl">Mini-Projects</h1>
                       </Link>
                       <Link
-                        href="/contact"
+                        href="/Projects"
                         className="flex flex-row gap-3 items-center"
                         onClick={() => setSheetOpen(false)}
                       >
-                        <MessageCircleMore />
-                        <h1 className="text-2xl">Contact</h1>
+                        <FolderGit />
+                        <h1 className="text-2xl">Projects</h1>
                       </Link>
                     </div>
                   </SheetHeader>
