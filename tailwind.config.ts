@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        blay: "#1b1b1b",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: "hsl(var(--primary))",

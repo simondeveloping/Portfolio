@@ -30,7 +30,6 @@ export default function EmailReminder() {
       body: JSON.stringify(formData),
     });
     const data = await response.json();
-    console.log(data);
   };
   return (
     <div>

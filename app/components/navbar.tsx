@@ -11,18 +11,25 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
-  Settings,
   Menu,
   Home,
   User,
   TerminalSquare,
   MessageCircleMore,
 } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faFile } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
-  const [textColor, setTextColor] = useState("text-white");
+  // const [textColor, setTextColor] = useState("text-white");
   const [sheetOpen, setSheetOpen] = useState(false);
 
+  /*
   const handleScroll = () => {
     const sections = document.querySelectorAll(".bg-white, .bg-gray-500");
     let isWhiteBg = false;
@@ -39,8 +46,9 @@ export default function Navbar() {
 
     setTextColor(isWhiteBg ? "text-black" : "text-white");
   };
-
-  useEffect(() => {
+*/
+  /* 
+useEffect(() => {
     handleScroll(); // Überprüfe die Schriftfarbe sofort nach dem Laden
     window.addEventListener("scroll", handleScroll);
 
@@ -48,36 +56,48 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  */
   return (
-    <nav className={`sticky top-0 ${textColor} z-50 bg-transparent`}>
-      <div className="bg-transparent text-black dark:text-white">
-        <div className="text-center p-4 flex flex-row justify-between xl:text-base lg:text-base sm:text-sm md:text-sm">
-          <Sheet>
-            <SheetTrigger>
-              <Settings className="transition-transform duration-300 hover:rotate-45 w-5 h-5" />
-            </SheetTrigger>
-            <SheetContent
-              side="left"
-              className="bg-sky-200 dark:bg-sky-800 text-black dark:text-white"
-            >
-              <SheetHeader>
-                <SheetTitle>Settings</SheetTitle>
-                <SheetDescription>Customize your experience</SheetDescription>
-                <div className="">
-                  <ul className="">
-                    <li className="flex items-center flex-row gap-2">
-                      <h1 className="text-black dark:text-white lg:text-xl text-lg">
-                        Light / Dark Mode:{" "}
-                      </h1>
-                      <ModeToggle />
-                    </li>
-                  </ul>
-                </div>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
-          <h1>Login</h1>
-          <div className="justify-end flex">
+    <nav className="">
+      {/*To make nav sticky add  {`sticky top-0 ${textColor} z-50 bg-transparent`}*/}
+      <div className="dark:dark:bg-[#1b1b1b] bg-white text-black dark:text-white lg:flex lg:justify-center ">
+        <div className="text-center p-9 flex flex-row lg:justify-around justify-between xl:text-lg lg:text-base sm:text-sm md:text-sm lg:w-[100vw]">
+          <div className="flex flex-row justify-center lg:w-[30vw]">
+            <div className="gap-4 flex flex-row items-start">
+              <ModeToggle />
+              <Link href="/">
+                <FontAwesomeIcon
+                  icon={faFile}
+                  className="h-[1.6rem] w-[1.6rem] text-orange-400 p-1"
+                />
+              </Link>
+              <Link href="/">
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="h-[1.6rem] w-[1.6rem] p-1"
+                />
+              </Link>
+              <Link href="/" className="">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
+                />
+              </Link>
+              <Link href="/" className="">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
+                />
+              </Link>
+              <Link href="/">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="h-[1.6rem] w-[1.6rem] text-red-400 p-1"
+                />
+              </Link>
+            </div>
+          </div>
+          <div className="w-1/2 flex justify-end">
             <div className="flex flex-col gap-5 lg:hidden">
               <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
                 <SheetTrigger>
@@ -125,34 +145,30 @@ export default function Navbar() {
                 </SheetContent>
               </Sheet>
             </div>
-            <div className="justify-around space-x-4 items-center lg:gap-8 hidden sm:flex">
+            <div className="justify-around space-x-4 items-center lg:gap-8 hidden sm:flex font-medium">
               <Link
                 href="/"
                 className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
-                <Home />
                 Home
               </Link>
               <Link
-                href="/Portfolio"
+                href="/About"
                 className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
-                <User />
                 About
               </Link>
               <Link
                 href="/MiniProjects"
                 className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
-                <TerminalSquare />
                 Mini-Projects
               </Link>
               <Link
-                href="/contact"
+                href="/Projects"
                 className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
               >
-                <MessageCircleMore />
-                Contact
+                Projects
               </Link>
             </div>
           </div>

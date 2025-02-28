@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: monospace;
+  font-family: var(--font-mont), sans-serif;
   background-color: white;
   color: white;
 }
@@ -81,4 +81,10 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.shadow-3d {
+  box-shadow: rgba(46, 195, 240, 0.4) 5px 5px, rgba(46, 195, 240, 0.3) 10px 10px,
+    rgba(46, 233, 240, 0.2) 15px 15px, rgba(46, 169, 240, 0.1) 20px 20px,
+    rgba(46, 169, 240, 0.05) 25px 25px;
 }

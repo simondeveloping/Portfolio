@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Overlay />
-      <div className="flex h-screen justify-center items-center flex-grow bg-white dark:bg-black">
+      <div className="flex h-screen justify-center items-center flex-grow bg-white dark:bg-blay">
         <div className="text-3xl text-black dark:text-white">
           <span className="animate-blink text-red-400">[ </span>simonp.one/
           <span className="animate-blink text-blue-400"> ]</span>
