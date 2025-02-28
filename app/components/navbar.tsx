@@ -187,7 +187,7 @@ useEffect(() => {
                         <h1 className="text-2xl">Home</h1>
                       </Link>
                       <Link
-                        href="/Portfolio"
+                        href="/About"
                         className="flex flex-row gap-3 items-center"
                         onClick={() => setSheetOpen(false)}
                       >
