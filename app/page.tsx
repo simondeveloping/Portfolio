@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Overlay color1={"bg-[#004f79]"} color2={"bg-[#0070ad]"} />
       <div className="flex h-screen justify-center items-center flex-grow bg-white dark:bg-blay">
-        <div className="text-3xl text-black dark:text-white">
+        <div className="text-8xl font-bold text-black dark:text-white">
           <span className="animate-blink text-red-400">[ </span>simonp.one/
           <span className="animate-blink text-blue-400"> ]</span>
         </div>
