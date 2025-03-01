@@ -78,7 +78,7 @@ useEffect(() => {
                 >
                   <SheetHeader>
                     <SheetTitle>Important</SheetTitle>
-                    <SheetDescription></SheetDescription>
+                    <SheetDescription>Feel free to follow :)</SheetDescription>
                     <div className="flex flex-col gap-5">
                       <Link
                         href="/Portfolio"
@@ -215,7 +215,7 @@ useEffect(() => {
                 </SheetContent>
               </Sheet>
             </div>
-            <div className="justify-around space-x-4 items-center lg:gap-8 hidden sm:flex font-medium">
+            <div className="justify-around space-x-4 items-center lg:gap-8 hidden lg:flex font-medium">
               <Link
                 href="/"
                 className="gap-2 flex relative transition-colors duration 500 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-teal-400 after:bottom-[-5px] after:left-0 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"

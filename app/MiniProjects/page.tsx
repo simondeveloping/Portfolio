@@ -165,7 +165,7 @@ export default function MiniProjects() {
   }
   return (
     <div>
-      <Overlay />
+      <Overlay color1={"bg-[#00c714]"} color2={"bg-[#008b0e]"} />
 
       <div className="dark:bg-blay">
         <div className="flex lg:flex-row flex-col justify-around">

@@ -7,7 +7,7 @@ import { VisitorChart } from "./shadcn/bar-chart";
 export default function Home() {
   return (
     <div>
-      <Overlay />
+      <Overlay color1={"bg-[#004f79]"} color2={"bg-[#0070ad]"} />
       <div className="flex h-screen justify-center items-center flex-grow bg-white dark:bg-blay">
         <div className="text-3xl text-black dark:text-white">
           <span className="animate-blink text-red-400">[ </span>simonp.one/
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="border-t-2 border-zinc-600 border-r-2 h-100 w-[30vw]"></div>
         <div className="border-b-2 border-zinc-600 w-[70vw] h-100"></div>
       </div>
-      <div className="h-screen bg-gray-900"></div>
+      <div className="h-screen"></div>
     </div>
   );
 }

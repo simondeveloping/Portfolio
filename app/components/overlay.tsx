@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function Overlay() {
+interface OverlayProps {
+  color1: string;
+  color2: string;
+}
+export default function Overlay({ color1, color2 }: OverlayProps) {
   const [animate, setAnimate] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
 
@@ -31,8 +35,8 @@ export default function Overlay() {
           animate ? "-translate-x-full" : "translate-x-0"
         }`}
       >
-        <div className="h-screen w-[50vw] dark:bg-[#004f79] bg-[#eabfff] absolute right-0"></div>
-        <div className="h-screen w-[70vw] dark:bg-[#0070ad] bg-[#d580ff] absolute right-30"></div>
+        <div className={`h-screen w-[50vw] ${color1} absolute right-0`}></div>
+        <div className={`h-screen w-[70vw] ${color2} absolute right-30`}></div>
       </div>
     </div>
   );

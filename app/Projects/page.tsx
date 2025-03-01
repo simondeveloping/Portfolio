@@ -7,60 +7,66 @@ export default function Contact() {
   return (
     <div>
       <div className="dark:bg-blay ">
-        <Overlay />
+        <Overlay color1={"bg-[#eabfff]"} color2={"bg-[#d580ff]"} />
         <div className="w-full h-[20vh] flex justify-center items-center mb-20">
           <h1 className="text-blay dark:text-white text-8xl font-bold">
-            Lorem
+            Projects
           </h1>
         </div>
         <div className="w-full flex justify-center">
-          <div className="flex border-2 border-blay dark:border-white text-blay dark:text-white p-4 rounded-lg h-auto w-[80vw] shadow-3d">
-            <div className="w-1/2 bg-cover bg-no-repeat overflow-hidden relative lg:flex justify-center items-center  flex-col gap-4 hidden">
-              <div className="w-3/4 h-3/4  relative overflow-hidden rounded-xl">
+          <div className="w-[90vw] flex border border-blay dark:border-white text-blay dark:text-white p-4 rounded-2xl h-auto lg:w-[80vw] dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] lg:flex-row flex-col">
+            <div className="lg:w-1/2 w-full bg-cover bg-no-repeat overflow-hidden relative flex justify-center items-center flex-col gap-4">
+              <div className=" w-full lg:w-3/4 h-auto lg:h-3/4 relative overflow-hidden rounded-xl">
                 <Image
-                  src="/test.jpg"
+                  src="/simonp.png"
                   width={500}
                   height={500}
                   alt="Test"
-                  className="lg:full lg:full lg:max-h-[1000px] lg:max-w-[1000px] max-h-[200px] max-w-[200px] object-cover hover:scale-110 transform transition-transform duration-300 "
+                  className="lg:w-full lg:h-full lg:max-h-[1000px] lg:max-w-[5000px] max-h-[400px] max-w-[400px] object-cover hover:scale-110 transform transition-transform duration-300 "
                 />
               </div>
             </div>
-            <div className="w-1/2  flex justify-center items-start p-4 flex-col gap-5">
-              <h1 className="text-teal-300">Request</h1>
-              <h1 className="text-4xl font-bold">Lorem ipsum</h1>
-              <p className="text-xl">
-                Quibusdam iusto harum eveniet. Id nulla et enim reiciendis et
-                expedita. Rerum laudantium debitis aut nemo aut atque aliquam
-                dicta.
+            <div className="lg:w-1/2 w-full flex justify-center items-start p-4 flex-col gap-2 lg:gap-5">
+              <h1 className="text-teal-300">My own Portfolio</h1>
+              <h1 className="text-xl lg:text-4xl font-bold">
+                <span className="animate-blink text-red-400">[</span>simonp.one
+                <span className="animate-blink text-blue-400">]</span>
+              </h1>
+              <p className="text-base lg:text-xl">
+                This is my own portfolio. It is a project that I have been
+                working on for a long time. The goal of this project is to
+                present my skills and projects in a clear and structured way.
+                The website is still in progress...
               </p>
               <Link href="https://github.com/simondeveloping/Portfolio">
-                <div className="text-4xl flex flex-row gap-5">
+                <div className="text-2xl lg:text-4xl flex flex-row gap-5">
                   <FontAwesomeIcon icon={faGithub} className="p-3" />
-                  <div className=" rounded-xl bg-blay dark:bg-white text-white dark:text-blay p-3 flex items-center justify-center hover:scale-105 duration-300 transform transition-transform">
-                    <h1 className="text-xl">Visit Project</h1>
+                  <div className=" rounded-xl bg-blay dark:bg-white text-white dark:text-blay p-1 lg:p-3 flex items-center justify-center hover:scale-105 duration-300 transform transition-transform">
+                    <h1 className="text-base lg:text-xl">Visit Project</h1>
                   </div>
                 </div>
               </Link>
             </div>
           </div>
         </div>
-        <div className="h-auto w-full flex flex-row mt-20 justify-center">
-          <div className="w-[80vw] flex justify-between">
-            <div className="w-1/2 flex items-center ">
-              <div className="h-auto w-auto flex border-2 border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-xl">
-                <div className="w-full h-[40vh] relative overflow-hidden rounded-xl">
+        <div className="h-auto w-full flex flex-row mt-20 justify-center flex-wrap">
+          <div className="lg:w-[80vw] w-[100vw] flex justify-center lg:justify-between flex-wrap gap-y-20">
+            <div className="flex items-center ">
+              <div className="h-auto lg:w-auto lg:max-w-[38vw] w-full flex border-2 border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-2xl dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
+                <div className="w-full h-auto lg:h-[40vh] relative overflow-hidden rounded-xl">
                   <Image
                     src="/test.jpg"
                     width={500}
                     height={200}
                     alt="Test"
-                    className="lg:full lg:full lg:max-h-[700px] lg:max-w-[400px] max-h-[200px] max-w-[200px] object-cover hover:scale-110 transform transition-transform duration-300 rounded-xl"
+                    className="lg:full lg:full lg:max-h-[700px] lg:max-w-[700px] max-h-[300px] max-w-[300px] object-cover hover:scale-110 transform transition-transform duration-300 rounded-xl"
                   />
                 </div>
                 <div className="flex justify-start items-start pt-3 w-full flex-col gap-1">
-                  <h1 className="text-xl text-teal-300">Next Js Template</h1>
-                  <h1 className="text-2xl">Website</h1>
+                  <h1 className="text-xl text-teal-300">Website Template</h1>
+                  <h1 className="text-2xl">
+                    NextJS with Typescript and Tailwind CSS
+                  </h1>
                   <Link
                     href="https://github.com/simondeveloping"
                     className="flex flex-row gap-3 p-2 hover:text-red-300"
@@ -73,22 +79,24 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div className="w-1/2 flex justify-end items-center">
-              <div className="h-auto w-auto flex border-2 border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-xl">
-                <div className="w-full h-[40vh] relative overflow-hidden rounded-xl">
+            <div className="flex justify-end items-center">
+              <div className="h-auto w-auto lg:max-w-[38vw] flex border-2 border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-2xl dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
+                <div className="w-full h-auto lg:h-[40vh] relative overflow-hidden rounded-xl">
                   <Image
                     src="/test.jpg"
                     width={500}
                     height={200}
                     alt="Test"
-                    className="lg:full lg:full lg:max-h-[700px] lg:max-w-[400px] max-h-[200px] max-w-[200px] object-cover hover:scale-110 transform transition-transform duration-300 rounded-xl"
+                    className="lg:full lg:full lg:max-h-[700px] lg:max-w-[700px] max-h-[300px] max-w-[300px] object-cover hover:scale-110 transform transition-transform duration-300 rounded-xl"
                   />
                 </div>
                 <div className="flex justify-start items-start pt-3 w-full flex-col gap-1">
                   <h1 className="text-xl text-teal-300">
-                    distinctio quibusdam et
+                    In Progress: Own App?
                   </h1>
-                  <h1 className="text-2xl">Website</h1>
+                  <h1 className="text-2xl">
+                    Maybe I will create an own App with Swift?
+                  </h1>
                   <Link
                     href="https://github.com/simondeveloping"
                     className="flex flex-row gap-3 p-2 hover:text-blue-300"

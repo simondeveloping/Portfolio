@@ -5,11 +5,11 @@
 body {
   font-family: var(--font-mont), sans-serif;
   background-color: white;
-  color: white;
+  color: #1b1b1b;
 }
 .dark body {
-  background-color: black;
-  color: black;
+  background-color: #1b1b1b;
+  color: rgb(255, 255, 255);
 }
 
 html {
