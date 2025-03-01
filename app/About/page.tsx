@@ -13,7 +13,7 @@ export default function Portfolio() {
       <Overlay color1={"bg-[#e8005f]"} color2={"bg-[#a20043]"} />
       <div className="flex h-screen justify-center gap-3 p-10 lg:gap-5 lg:p-20 flex-wrap">
         <h1 className="text-4xl lg:text-8xl font-bold">Hello </h1>
-        <h1 className="text-4xl lg:text-8xl font-bold">I'm </h1>
+        <h1 className="text-4xl lg:text-8xl font-bold">I&apos;m </h1>
         <h1 className="text-4xl lg:text-8xl font-bold">Simon</h1>
       </div>
       <h1 className="text-4xl lg:text-8xl font-bold text-center p-20">
@@ -34,7 +34,8 @@ export default function Portfolio() {
       <div className="flex justify-center w-full mb-40">
         <div className="w-[70vw] lg:w-[40vw] gap-5 flex flex-col">
           <h1 className="text-base lg:text-2xl">
-            Bachelor of Science in 'Applied Mathematics and Computer Science'
+            Bachelor of Science in &apos;Applied Mathematics and Computer
+            Science&apos;
           </h1>
           <p className="text-gray-400 text-xl">(2023 - 2026) | University</p>
           <Progress value={progress} />
