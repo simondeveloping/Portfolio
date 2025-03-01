@@ -1,0 +1,242 @@
+"use client";
+import { useState } from "react";
+import { Switch } from "@/components/ui/switch";
+import Link from "next/link";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+export default function MiniProjects() {
+  const [search, setSearch] = useState("");
+  const [selectedtags, setSelectedtags] = useState<{
+    [key: string]: boolean;
+  }>({
+    JustForFun: true,
+    Private: false,
+    Useful: true,
+    Attached: false,
+    InProgress: false,
+    Done: false,
+  });
+
+  const boxes = [
+    {
+      id: "1",
+      name: "Email Reminder",
+      description:
+        "The project is an email reminder that sends an email to the user with a predefined text on a specific date. This ensures that important reminders are never forgotten.",
+      pic: "/reminder.webp",
+      tags: ["Useful", "Attached", "InProgress"],
+      link: "/MiniProjects/EmailReminder",
+    },
+    {
+      id: "2",
+      name: "Pinguin",
+      description:
+        "This is for people who want to approach someone but don't know how :)",
+      pic: "/pinguin.jpg",
+      tags: ["JustForFun", "Private", "InProgress", "Useful"],
+      link: "https://simonp.one/pinguin/pinguin",
+    },
+    {
+      id: "3",
+      name: "Yes Or No",
+      description: "This is for people with decision-making problems",
+      pic: "/notyet.webp",
+      tags: ["JustForFun", "InProgress"],
+      link: "/MiniProjects",
+    },
+    {
+      id: "4",
+      name: "Christmas Timer",
+      description: "How many days left till christmas?",
+      pic: "/notyet.webp",
+      tags: ["JustForFun", "InProgress"],
+      link: "/MiniProjects",
+    },
+    {
+      id: "5",
+      name: "test",
+      description: "This is for testing purposes",
+      pic: "/notyet.webp",
+      tags: ["Private", "JustForFun"],
+      link: "/MiniProjects",
+    },
+    {
+      id: "6",
+      name: "test",
+      description: "This is for testing purposes",
+      pic: "/notyet.webp",
+      tags: ["Private", "JustForFun"],
+      link: "/MiniProjects",
+    },
+  ];
+  const tags = [
+    {
+      id: "1",
+      tag: "JustForFun",
+      bgColor: "bg-blue-200",
+      borderColor: "border-blue-200",
+    },
+    {
+      id: "2",
+      tag: "Private",
+      bgColor: "bg-violet-200",
+      borderColor: "border-violet-200",
+    },
+    {
+      id: "3",
+      tag: "Useful",
+      bgColor: "bg-orange-200",
+      borderColor: "border-orange-200",
+    },
+    {
+      id: "4",
+      tag: "Attached",
+      bgColor: "bg-red-200",
+      borderColor: "border-red-200",
+    },
+    {
+      id: "5",
+      tag: "InProgress",
+      bgColor: "bg-yellow-200",
+      borderColor: "border-yellow-200",
+    },
+    {
+      id: "6",
+      tag: "Done",
+      bgColor: "bg-green-200",
+      borderColor: "border-green-200",
+    },
+  ];
+  const toggletagsSelection = (tags: string) => {
+    setSelectedtags((prev) => ({
+      ...prev,
+      [tags]: !prev[tags],
+    }));
+  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+  const clearAll = () => {
+    setSelectedtags((prevTags) => {
+      const updatedTags = Object.keys(prevTags).reduce((acc, tag) => {
+        acc[tag] = false;
+        return acc;
+      }, {} as { [key: string]: boolean });
+      return updatedTags;
+    });
+  };
+  const highlightText = (text: string, search: string) => {
+    if (!search) return text;
+    const parts = text.split(new RegExp(`(${search})`, "gi"));
+    return parts.map((part, index) =>
+      part.toLowerCase() === search.toLowerCase() ? (
+        <span key={index} className="bg-yellow-600">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+  const filteredBoxes = boxes.filter((box) => {
+    return (
+      (box.name.toLowerCase().includes(search.toLowerCase()) ||
+        box.description.toLowerCase().includes(search.toLowerCase()) ||
+        box.tags.some((tag) =>
+          tag.toLowerCase().includes(search.toLowerCase())
+        )) &&
+      box.tags.some(
+        (tag) =>
+          selectedtags[tag] || !Object.values(selectedtags).includes(true)
+      )
+    );
+  });
+  if (filteredBoxes.length === 0) {
+    filteredBoxes.push({
+      id: "0",
+      name: "No projects found",
+      description: "No projects found",
+      pic: "/sad.png",
+      tags: ["Useful"],
+      link: "/MiniProjects",
+    });
+  }
+  return (
+    <div className="h-auto">
+      <div className="lg:text-8xl font-bold text-6xl p-8">Mini-Projects</div>
+      <div className="flex w-full flex-row p-8">
+        <div className="w-1/2">
+          <div className="flex flex-col gap-5">
+            <input
+              className="dark:bg-gray-500 bg-gray-300 text-blay dark:text-white w-full rounded-sm p-1.5 border border-gray-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500 outline-none"
+              placeholder={"Search for project"}
+              onChange={handleChange}
+              value={search}
+            />
+            <HoverCard>
+              <HoverCardTrigger>@Overview (Hover)</HoverCardTrigger>
+              <HoverCardContent>
+                There are a total of {boxes.length} projects.
+              </HoverCardContent>
+            </HoverCard>
+          </div>
+        </div>
+        <div className="w-1/2 flex justify-start flex-col items-center mt-[-5rem]">
+          <h1 className="text-2xl p-3">Select Tags:</h1>
+          <div className="dark:bg-gray-200 bg-gray-400 bg-opacity-20 flex flex-wrap gap-2 p-4 rounded-xl w-3/4">
+            {tags.map((tags) => (
+              <div
+                key={tags.id}
+                className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.bgColor} rounded-xl shadow-black shadow-sm`}
+              >
+                <Switch
+                  checked={selectedtags[tags.tag]}
+                  onCheckedChange={() => toggletagsSelection(tags.tag)}
+                  className="dark:data-[state=checked]:bg-white data-[state=checked]:bg-gray-700 data-[state=unchecked]:bg-gray-400"
+                ></Switch>
+                <h1>{tags.tag}</h1>
+              </div>
+            ))}
+            <button
+              className="border rounded-xl hover:scale-105 text-blay p-2 border-blay "
+              onClick={clearAll}
+            >
+              Clear all
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full justify-center">
+        <div className="h-auto flex flex-wrap flex-row p-10 gap-10">
+          {filteredBoxes.map((box) => {
+            return (
+              <Link key={box.id} href={box.link}>
+                <div className="max-w-[25vw] h-auto flex flex-col border border-blay dark:border-white rounded-xl p-4 m-4 dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] gap-5 hover:scale-105 min-w-[25vw] min-h-[50vh]">
+                  <h1 className="text-xl font-bold">{box.name}</h1>
+                  <p className="text-lg">{box.description}</p>
+                  <div className="flex flex-row gap-2 flex-wrap">
+                    <p className="text-black dark:text-white">Tags: </p>
+                    {box.tags.map((tag) => {
+                      const tagColor = tags.find((t) => t.tag === tag)?.bgColor;
+                      return (
+                        <div
+                          key={tag}
+                          className={`flex gap-2 ${tagColor} text-black rounded-xl p-0.5 text-sm`}
+                        >
+                          {tag}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -9,7 +9,7 @@ export default function Contact() {
       <div className="dark:bg-blay ">
         <Overlay color1={"bg-[#eabfff]"} color2={"bg-[#d580ff]"} />
         <div className="w-full h-[20vh] flex justify-center items-center mb-20">
-          <h1 className="text-blay dark:text-white text-8xl font-bold">
+          <h1 className="text-blay dark:text-white lg:text-8xl font-bold text-7xl">
             Projects
           </h1>
         </div>
