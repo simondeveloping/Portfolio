@@ -1,11 +1,13 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import { Search } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
+import Link from "next/link";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import Overlay from "../components/overlay";
-
 export default function MiniProjects() {
   const [search, setSearch] = useState("");
   const [selectedtags, setSelectedtags] = useState<{
@@ -163,137 +165,91 @@ export default function MiniProjects() {
       link: "/MiniProjects",
     });
   }
+  const ProjectsInProgress = boxes.filter((box) =>
+    box.tags.includes("InProgress")
+  ).length;
+  const ProjectsDone = boxes.filter((box) => box.tags.includes("Done")).length;
   return (
-    <div>
+    <div className="h-auto">
       <Overlay color1={"bg-[#00c714]"} color2={"bg-[#008b0e]"} />
 
-      <div className="dark:bg-blay">
-        <div className="flex lg:flex-row flex-col justify-around">
-          <div className="lg:w-2/4 w-full h-auto relative">
-            <div className="sticky top-20 flex flex-col gap-10 justify-start items-center left:0">
-              <div className="">
-                <h1 className="text-lg flex flex-row gap-1 text-black dark:text-white">
-                  <Search />
-                  Search for project
-                </h1>
-                <input
-                  onChange={handleChange}
-                  value={search}
-                  className="text-black dark:text-white border-2 border-violet-500 rounded-xl h-10 w-64 p-4 focus:outline-none focus:ring-1 focus:ring-violet-500 focus:border-violet-500"
-                  type="text"
-                  placeholder="Search"
-                ></input>
-              </div>
-              <div className="gap-3 flex flex-col hidden lg:flex">
-                <h1 className="text-xl text-black dark:text-white">
-                  Select tags
-                </h1>
-                {tags.map((tags) => (
-                  <div
-                    key={tags.id}
-                    className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.bgColor} rounded-xl shadow-black shadow-sm`}
-                  >
-                    <Switch
-                      checked={selectedtags[tags.tag]}
-                      onCheckedChange={() => toggletagsSelection(tags.tag)}
-                      className="data-[state=checked]:bg-gray-700 data-[state=unchecked]:bg-gray-400"
-                    ></Switch>
-                    <h1>{tags.tag}</h1>
-                  </div>
-                ))}
-                <button
-                  className="border rounded-xl hover:scale-105 shadow-sm dark:shadow-white text-black dark:text-white shadow-black"
-                  onClick={clearAll}
-                >
-                  Clear all
-                </button>
-              </div>
+      <div className="lg:text-8xl font-bold text-6xl p-8">Mini-Projects</div>
+      <div className="flex w-full flex-row p-8">
+        <div className="lg:w-1/2 w-full">
+          <div className="flex flex-col gap-5">
+            <input
+              className="dark:bg-gray-500 bg-gray-300 text-blay dark:text-white w-full rounded-sm p-1.5 border border-gray-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500 outline-none"
+              placeholder={"Search for project"}
+              onChange={handleChange}
+              value={search}
+            />
+            <div className="lg:flex hidden">
+              <HoverCard>
+                <HoverCardTrigger className="border border-blay dark:border-white p-2 rounded-xl">
+                  @Overview (Hover)
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  There are a total of {boxes.length} projects.
+                  <h1 className="text-yellow-200">
+                    In progress: {ProjectsInProgress}
+                  </h1>
+                  <h1 className="text-green-200">Done: {ProjectsDone}</h1>
+                </HoverCardContent>
+              </HoverCard>
             </div>
           </div>
-          <div className="flex flex-col lg:gap-10 gap-4 justify-start items-center p-4">
-            {filteredBoxes.map((box) => {
-              const borderColor = tags.find(
-                (t) => t.tag === box.tags[0]
-              )?.borderColor;
-              return (
-                <Link key={box.id} className="w-full h-auto" href={box.link}>
-                  <div
-                    className={`cursor-pointer border-2 ${borderColor} rounded-xl duration-300 hover:shadow-md dark:hover:shadow-white hover:scale-105 hover:shadow-black shadow-xl`}
-                  >
-                    <div className="2xl:w-[40vw]  xl:w-[50vw]  lg:w-[50vw] w-full h-auto p-6 flex flex-row max-h-screen-lg">
-                      <div className="lg:w-1/2 w-full flex gap-5 flex-col justify-around">
-                        <h1 className="2xl:text-3xl text-2xl text-black dark:text-white">
-                          {highlightText(box.name, search)}
-                        </h1>
-                        <p className="2xl:text-xl xl:text-base sm:text-sm text-black dark:text-white">
-                          {highlightText(box.description, search)}
-                        </p>
-                        <div className="flex justify-start items-start w-full gap-2 flex-wrap">
-                          <h1 className="text-black dark:text-white">Tags: </h1>
-                          {box.tags.map((tag) => {
-                            const tagColor = tags.find(
-                              (t) => t.tag === tag
-                            )?.bgColor;
-                            return (
-                              <div
-                                key={tag}
-                                className={`flex gap-2 ${tagColor} text-black rounded-xl p-0.5 text-sm`}
-                              >
-                                {tag}
-                              </div>
-                            );
-                          })}
+        </div>
+        <div className="w-1/2 lg:flex justify-start flex-col items-center mt-[-5rem] hidden">
+          <h1 className="text-2xl p-3">Select Tags:</h1>
+          <div className="dark:bg-gray-200 bg-gray-400 bg-opacity-20 flex flex-wrap gap-2 p-4 rounded-xl w-3/4">
+            {tags.map((tags) => (
+              <div
+                key={tags.id}
+                className={`flex flex-row gap-2 p-2 text-black text-sm ${tags.bgColor} rounded-xl shadow-black shadow-sm`}
+              >
+                <Switch
+                  checked={selectedtags[tags.tag]}
+                  onCheckedChange={() => toggletagsSelection(tags.tag)}
+                  className="dark:data-[state=checked]:bg-white data-[state=checked]:bg-gray-700 data-[state=unchecked]:bg-gray-400"
+                ></Switch>
+                <h1>{tags.tag}</h1>
+              </div>
+            ))}
+            <button
+              className="border rounded-xl hover:scale-105 text-blay p-2 border-blay "
+              onClick={clearAll}
+            >
+              Clear all
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full justify-center">
+        <div className="h-auto flex flex-wrap flex-row lg:p-10 gap-10">
+          {filteredBoxes.map((box) => {
+            return (
+              <Link key={box.id} href={box.link}>
+                <div className="lg:max-w-[25vw]  flex flex-col border border-blay dark:border-white rounded-xl p-4 m-4 dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] gap-5 hover:scale-105 min-w-[25vw] lg:min-h-[50vh] h-auto w-[90vw]">
+                  <h1 className="text-xl font-bold">{box.name}</h1>
+                  <p className="text-lg">{box.description}</p>
+                  <div className="flex flex-row gap-2 flex-wrap">
+                    <p className="text-black dark:text-white">Tags: </p>
+                    {box.tags.map((tag) => {
+                      const tagColor = tags.find((t) => t.tag === tag)?.bgColor;
+                      return (
+                        <div
+                          key={tag}
+                          className={`flex gap-2 ${tagColor} text-black rounded-xl p-0.5 text-sm`}
+                        >
+                          {tag}
                         </div>
-                      </div>
-
-                      <div className="w-1/2 bg-cover bg-no-repeat overflow-hidden relative lg:flex justify-center items-center  flex-col gap-4 hidden">
-                        <Image
-                          src={box.pic}
-                          width={400}
-                          height={500}
-                          alt="Test"
-                          className="lg:w-full lg:h-full lg:max-h-[500px] lg:max-w-[500px] max-h-[200px] max-w-[200px] object-cover hover:scale-110 transform transition-transform duration-300"
-                        />
-                      </div>
-                    </div>
+                      );
+                    })}
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="relative w-2/4 justify-center ">
-            <div className=" flex sticky top-20 flex-col gap-4 items-center hidden lg:flex">
-              <h1 className="text-3xl text-black dark:text-white">
-                <u>Overview</u>
-              </h1>
-              <h1 className="text-base text-black dark:text-white">
-                Total projects:{" "}
-                <span className="text-blue-500">{boxes.length}</span>
-              </h1>
-              <h1 className="text-base text-black dark:text-white">
-                Projects shown:{" "}
-                <span className="text-blue-500">{filteredBoxes.length}</span>
-              </h1>
-              <h1 className="text-lg text-black dark:text-white">
-                Tags: Number of projects
-              </h1>
-              <ul className="text-black bg-black dark:text-white dark:bg-gray-500 bg-opacity-10 p-4 rounded-xl flex gap-2 flex-col p-10">
-                {tags.map((tag) => (
-                  <li key={tag.id} className="flex flex-row gap-2">
-                    <div
-                      className={`flex gap-2 ${tag.bgColor} text-black rounded-xl p-1 text-sm`}
-                    >
-                      {tag.tag}
-                    </div>
-                    <h1 className="text-black dark:text-white">
-                      :{" "}
-                      {boxes.filter((box) => box.tags.includes(tag.tag)).length}
-                    </h1>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
