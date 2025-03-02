@@ -14,7 +14,7 @@ export default function Contact() {
           </h1>
         </div>
         <div className="w-full flex justify-center">
-          <div className="w-[90vw] flex border border-blay dark:border-white text-blay dark:text-white p-4 rounded-2xl h-auto lg:w-[80vw] dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] lg:flex-row flex-col">
+          <div className="w-[90vw] flex border border-blay dark:border-white text-blay dark:text-white p-4 rounded-3xl h-auto lg:w-[80vw] dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] lg:flex-row flex-col">
             <div className="lg:w-1/2 w-full bg-cover bg-no-repeat overflow-hidden relative flex justify-center items-center flex-col gap-4">
               <div className=" w-full lg:w-3/4 h-auto lg:h-3/4 relative overflow-hidden rounded-xl">
                 <Image
@@ -52,7 +52,7 @@ export default function Contact() {
         <div className="h-auto w-full flex flex-row mt-20 justify-center flex-wrap">
           <div className="lg:w-[80vw] w-[100vw] flex justify-center lg:justify-between flex-wrap gap-y-20">
             <div className="flex items-center ">
-              <div className="h-auto lg:w-auto lg:max-w-[38vw] w-[90vw] flex border border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-2xl dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
+              <div className="h-auto lg:w-auto lg:max-w-[38vw] w-[90vw] flex border border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-3xl dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
                 <div className="w-full h-auto lg:h-[40vh] relative overflow-hidden rounded-xl">
                   <Image
                     src="/test.jpg"
@@ -80,7 +80,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex justify-end items-center">
-              <div className="h-auto w-[90vw] lg:max-w-[38vw] flex border border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-2xl dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
+              <div className="h-auto w-[90vw] lg:max-w-[38vw] flex border border-blay dark:border-white text-blay dark:text-white flex-col items-center p-6 rounded-3xl dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
                 <div className="w-full h-auto lg:h-[40vh] relative overflow-hidden rounded-xl">
                   <Image
                     src="/test.jpg"

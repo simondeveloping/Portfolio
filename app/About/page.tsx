@@ -21,9 +21,7 @@ export default function Portfolio() {
       </h1>
       <div className="flex justify-center w-full mb-40">
         <div className="w-[70vw] lg:w-[40vw] gap-5 flex flex-col">
-          <h1 className="text-base lg:text-2xl">
-            Matse - Mathematics and Computer Science
-          </h1>
+          <h1 className="text-base lg:text-2xl">Software developer</h1>
           <p className="text-gray-400 text-xl">(2023 - 2026) | RWTH Aachen</p>
           <Progress value={progress} />
         </div>

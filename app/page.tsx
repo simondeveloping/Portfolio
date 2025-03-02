@@ -4,6 +4,7 @@ import { PageNavigation } from "./shadcn/pagination";
 import Overlay from "./components/overlay";
 import YearProgress from "./components/yearProgress";
 import { VisitorChart } from "./shadcn/bar-chart";
+import Feedback from "./components/feedback";
 export default function Home() {
   return (
     <div>
@@ -28,14 +29,14 @@ export default function Home() {
           <h1 className="text-3xl font-bold">Total Visitors Overview</h1>
           <p className="p-10">
             Welcome to the visitor insights for 2025. This data provides a
-            valuable look at when and how people interact with your website. For
+            valuable look at when and how people interact with my website. For
             me, it&apos;s fascinating to see which months or events drive the
             most engagement. Understanding these trends helps me improve the
             site and better connect with visitors.
           </p>
         </div>
       </div>
-      <div className="w-full flex lg:flex-row justify-between h-auto mb-10 flex-col">
+      <div className="w-full flex lg:flex-row justify-between h-auto mb-20 flex-col">
         <div className="w-full lg:w-1/2 flex justify-center items-center flex-col gap-1 lg:gap-5 p-10">
           <h1 className="text-3xl font-bold">Browser Usage</h1>
           <p>
@@ -54,6 +55,13 @@ export default function Home() {
         <div className="w-[70vw] border-b-2 border-gray-500"></div>
         <div className="w-[30vw] border-l-2 border-t-2 border-gray-500"></div>
       </div>
+      <h1 className="text-6xl font-bold p-10">
+        <span className="text-red-400">G</span>ot{" "}
+        <span className="text-red-400">f</span>eedback&nbsp;?
+      </h1>
+
+      <Feedback />
+      <div className="w-full  "></div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ import { useEffect } from "react";
 const chartConfig = {
   Visitors: {
     label: "Visitors",
-    color: "hsl(var(--chart-3))",
+    color: "hsl(var(--primary))",
   },
 } satisfies ChartConfig;
 

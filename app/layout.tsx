@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-provider";
 import React from "react";
 import { Montserrat } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "simonp",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navbar />
 
           {children}
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>
