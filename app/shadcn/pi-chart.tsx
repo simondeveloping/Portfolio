@@ -103,11 +103,11 @@ export function PiChart() {
   }, [chartData]);
   return (
     <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle className="text-xl">Visitor counter</CardTitle>
+      <CardHeader className="items-center pb-0 bg-white dark:bg-blay">
+        <CardTitle className="text-xl">Browser Usage</CardTitle>
         <CardDescription>2024 - Today</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
+      <CardContent className="flex-1 pb-0 bg-white dark:bg-blay">
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
@@ -157,10 +157,10 @@ export function PiChart() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
+      <CardFooter className="flex-col gap-2 text-sm bg-white dark:bg-blay">
         <div className="flex items-center gap-2 font-medium leading-none"></div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          Currently Firefox has the most visitors :)
         </div>
       </CardFooter>
     </Card>

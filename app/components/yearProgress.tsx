@@ -27,8 +27,8 @@ export default function YearProgress() {
 
   return (
     <div>
-      <div className="rounded-xl flex flex-col items-center gap-5 text-black text-base p-4">
-        <h1 className="flex flex-row gap-2 text-blue-500">
+      <div className="rounded-xl flex flex-col items-center gap-5 text-base p-4">
+        <h1 className="flex flex-row gap-2 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -52,7 +52,7 @@ export default function YearProgress() {
           </svg>
           Year: {currentYear}
         </h1>
-        <Progress value={percentage} className="w-[20vw]" />
+        <Progress value={percentage} className="w-3/4" />
         <h2>
           {percentage.toFixed(2)}% ({daysOver} of {maxDays} days)
         </h2>

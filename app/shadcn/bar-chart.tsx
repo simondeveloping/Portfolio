@@ -71,12 +71,12 @@ export function VisitorChart() {
       });
   }, []);
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Visitor Stats</CardTitle>
-        <CardDescription>January - December 2024</CardDescription>
+    <Card className="w-full lg:w-1/2">
+      <CardHeader className="bg-white dark:bg-blay">
+        <CardTitle>Visitor Overview</CardTitle>
+        <CardDescription>January - December 2025</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="bg-white dark:bg-blay ">
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
@@ -108,29 +108,14 @@ export function VisitorChart() {
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
+      <CardFooter className="flex-col items-start gap-2 text-sm bg-white dark:bg-blay">
         <div className="flex gap-2 font-medium leading-none">
           <div className="flex items-center">
             These are the visitors for each month
           </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-eye"
-          >
-            <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the whole year
+          Currently January has the most visitors :)
         </div>
       </CardFooter>
     </Card>
