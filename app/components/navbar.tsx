@@ -15,9 +15,7 @@ import {
   Home,
   User,
   TerminalSquare,
-  MessageCircleMore,
   FolderGit,
-  Link2,
   Star,
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +24,10 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faFile } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faRightToBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   // const [textColor, setTextColor] = useState("text-white");
@@ -135,9 +136,9 @@ useEffect(() => {
             </div>
             <div className="gap-4 flex-row items-start lg:flex hidden">
               <ModeToggle />
-              <Link href="/">
+              <Link href="/auth/Login">
                 <FontAwesomeIcon
-                  icon={faFile}
+                  icon={faRightToBracket}
                   className="h-[1.6rem] w-[1.6rem] text-orange-400 p-1"
                 />
               </Link>

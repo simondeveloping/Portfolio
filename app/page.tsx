@@ -1,9 +1,8 @@
 "use client";
-import { PiChart } from "./shadcn/pi-chart";
-import { PageNavigation } from "./shadcn/pagination";
-import Overlay from "./components/overlay";
+import { PiChart } from "./components/pi-chart";
+import Overlay from "./components/overlay/overlay";
 import YearProgress from "./components/yearProgress";
-import { VisitorChart } from "./shadcn/bar-chart";
+import { VisitorChart } from "./components/bar-chart";
 import Feedback from "./components/feedback";
 export default function Home() {
   return (

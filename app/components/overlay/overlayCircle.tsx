@@ -5,20 +5,18 @@ interface OverlayProps {
   color1: string;
   color2: string;
 }
-export default function Overlay({ color1, color2 }: OverlayProps) {
+export default function OverlayCircle({ color1, color2 }: OverlayProps) {
   const [animate, setAnimate] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
 
   useEffect(() => {
-    // Verzögere den Start der Animation, damit der initiale Zustand gerendert wird.
     const animateTimer = setTimeout(() => {
       setAnimate(true);
-    }, 50); // 50ms Verzögerung, anpassbar
+    }, 50);
 
-    // Entferne das Overlay, sobald die Animation abgeschlossen ist.
     const removeTimer = setTimeout(() => {
       setShowOverlay(false);
-    }, 1050); // 50ms + 1000ms = 1050ms
+    }, 1050);
 
     return () => {
       clearTimeout(animateTimer);
@@ -32,11 +30,17 @@ export default function Overlay({ color1, color2 }: OverlayProps) {
     <div className="fixed inset-0 flex items-center justify-start bg-transparent z-40">
       <div
         className={`fixed inset-0 flex items-center justify-start transition-transform duration-1000 transform ${
-          animate ? "-translate-x-full" : "translate-x-0"
+          animate
+            ? "-translate-y-[150vh]"
+            : "translate-y-[-20vh] lg:translate-y-0"
         }`}
       >
-        <div className={`h-screen w-[50vw] ${color1} absolute right-0`}></div>
-        <div className={`h-screen w-[70vw] ${color2} absolute right-30`}></div>
+        <div
+          className={`w-[300vw] h-[300vw] lg:w-[90vw] lg:h-[90vw] rounded-full ${color1} absolute right-0 bottom-[-30vh]`}
+        ></div>
+        <div
+          className={`w-[300vw] h-[300vw] lg:w-[90vw] lg:h-[90vw] rounded-full ${color2} absolute lg:right-80 right-50 bottom-[-30vh]`}
+        ></div>
       </div>
     </div>
   );

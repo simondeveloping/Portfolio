@@ -1,5 +1,5 @@
-import Overlay from "../components/overlay";
 import { Progress } from "@/components/ui/progress";
+import OverlayCircle from "../components/overlay/overlayCircle";
 export default function Portfolio() {
   const currentDate = new Date();
   const startDate = new Date("2023-09-01");
@@ -10,7 +10,7 @@ export default function Portfolio() {
     100;
   return (
     <div>
-      <Overlay color1={"bg-[#e8005f]"} color2={"bg-[#a20043]"} />
+      <OverlayCircle color1={"bg-[#e8005f]"} color2={"bg-[#a20043]"} />
       <div className="flex h-screen justify-center gap-3 p-10 lg:gap-5 lg:p-20 flex-wrap">
         <h1 className="text-4xl lg:text-8xl font-bold">Hello </h1>
         <h1 className="text-4xl lg:text-8xl font-bold">I&apos;m </h1>

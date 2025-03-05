@@ -29,10 +29,10 @@ export default function Footer() {
         </div>
         <div className="w-full flex justify-between p-2">
           <div className="w-1/2 flex justify-center">
-            <Link href="https://simonp.one">
+            <Link href="https://7a622adc.simontesting.pages.dev/">
               {" "}
               <h1 className="">
-                <u>simonp.one</u>
+                <u>Old page</u>
               </h1>
             </Link>
           </div>
