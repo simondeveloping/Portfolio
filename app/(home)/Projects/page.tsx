@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Overlay from "../components/overlay/overlay";
+import Overlay from "../../components/overlay/overlay";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";

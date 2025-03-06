@@ -7,7 +7,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import Overlay from "../components/overlay/overlay";
+import Overlay from "../../components/overlay/overlay";
 export default function MiniProjects() {
   const [search, setSearch] = useState("");
   const [selectedtags, setSelectedtags] = useState<{

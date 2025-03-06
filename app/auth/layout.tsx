@@ -1,11 +1,17 @@
+import Link from "next/link";
+import { ArrowBigLeft } from "lucide-react";
+
 export default function AuthLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <div className="">
+      <Link href="/">
+        <ArrowBigLeft size={70} className="absolute text-blue-400 top-1/2 " />
+      </Link>
+      {children}
+    </div>
   );
 }

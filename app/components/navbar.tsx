@@ -125,6 +125,17 @@ useEffect(() => {
                         />
                         <h1 className="text-2xl">Instagram</h1>
                       </Link>
+                      <Link
+                        href="/auth/Login"
+                        className="flex flex-row gap-3 items-center"
+                        onClick={() => setLinksOpen(false)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faRightToBracket}
+                          className="h-[1.6rem] w-[1.6rem] text-orange-400 p-1"
+                        />
+                        <h1 className="text-2xl">Login/Register</h1>
+                      </Link>
                     </div>
                     <div className="relative left-0 top-10 flex items-center gap-5">
                       <ModeToggle />
