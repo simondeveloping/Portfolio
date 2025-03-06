@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className={montserrat.className}>
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"

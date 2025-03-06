@@ -33,7 +33,7 @@ export default function Login() {
   return (
     <div
       className="bg-cover bg-no-repeat"
-      style={{ backgroundImage: "url(/login.gi)" }}
+      style={{ backgroundImage: "url(/login.gif)" }}
     >
       <Music />
 

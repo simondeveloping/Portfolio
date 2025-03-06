@@ -31,7 +31,7 @@ export default function Register() {
   return (
     <div
       className="bg-cover bg-no-repeat"
-      style={{ backgroundImage: "url(/login.gi)" }}
+      style={{ backgroundImage: "url(/login.gif)" }}
     >
       <div className="h-screen flex justify-center items-center flex-col gap-5">
         <div className="border-2 border-blay bg-transparent backdrop-blur-md w-[60vw] h-[70vh] rounded-xl flex justify-center p-4">
