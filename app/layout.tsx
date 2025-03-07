@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en">
       <title>simonp.one</title>
-      <body>
+      <body className={montserrat.variable}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
