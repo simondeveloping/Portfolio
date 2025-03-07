@@ -13,8 +13,11 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
     }
   }, [user, loading, router]);
 
-  if (loading) return <p>Lädt...</p>;
-  if (!user) return null; // Verhindert das Rendern, bevor umgeleitet wird
+  if (loading) return;
+  <div className="h-screen w-full justify-center items-center">
+    <p className="text-3xl text-red-400">Lädt...</p>
+  </div>;
+  if (!user) return null;
 
   return <>{children}</>;
 };
