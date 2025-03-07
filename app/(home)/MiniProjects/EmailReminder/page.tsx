@@ -1,5 +1,5 @@
 "use client";
-import PrivateRoute from "@/app/PrivateRoute";
+import PrivateRoute from "../../../PrivateRoute";
 import { useState } from "react";
 export default function EmailReminder() {
   const [formData, setFormData] = useState({

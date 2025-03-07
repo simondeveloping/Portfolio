@@ -36,7 +36,7 @@ export default function MiniProjects() {
       description:
         "This is for people who want to approach someone but don't know how :)",
       tags: ["JustForFun", "Private", "InProgress", "Useful"],
-      link: "https://simonp.one/pinguin/pinguin",
+      link: "/MiniProjects/Pinguin",
     },
     {
       id: "3",

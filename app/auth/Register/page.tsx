@@ -34,28 +34,37 @@ export default function Register() {
       style={{ backgroundImage: "url(/login.gif)" }}
     >
       <div className="h-screen flex justify-center items-center flex-col gap-5">
-        <div className="border-2 border-blay bg-transparent backdrop-blur-md w-[60vw] h-[70vh] rounded-xl flex justify-center p-4">
-          <h1 className="text-3xl font-bold text-blay">Register</h1>
-          <form onSubmit={handleSubmit}>
+        <div className="border-2 border-blay bg-transparent backdrop-blur-md w-[60vw] h-[70vh] rounded-xl flex justify-center p-4 flex-col items-center gap-4">
+          <h1 className="text-3xl font-bold text-blay ">Register</h1>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 justify-center items-center"
+          >
             <input
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              className="p-1 rounded-xl border-2 border-blay bg-transparent placeholder-black text-black focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400"
             />
             <input
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="p-1 rounded-xl border-2 border-blay bg-transparent placeholder-black text-black focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400"
             />
             <input
+              type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="p-1 rounded-xl border-2 border-blay bg-transparent placeholder-black text-black focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400"
             />
             <input
+              type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              className="p-1 rounded-xl border-2 border-blay bg-transparent placeholder-black text-black focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400"
             />
             {error && <p className="text-red-500 text-4xl">{error}</p>}
             <button
