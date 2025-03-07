@@ -1,7 +1,7 @@
 "use client";
 import PrivateRoute from "../../../PrivateRoute";
 import { useState } from "react";
-export default function EmailReminder() {
+export default function EmailBot() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -9,6 +9,7 @@ export default function EmailReminder() {
     message: "",
     currentDate: new Date(),
   });
+  const [factor, setFactor] = useState(0);
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
@@ -23,14 +24,16 @@ export default function EmailReminder() {
   };
 
   const sendMail = async () => {
-    const response = await fetch("/api/sendEmailNow", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await response.json();
+    for (let i = 0; i < factor; i++) {
+      const response = await fetch("/api/sendEmailNow", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+    }
   };
   return (
     <PrivateRoute>
@@ -67,6 +70,13 @@ export default function EmailReminder() {
                   className="p-2 border border-gray-300 rounded-md"
                   onChange={handleChange}
                 ></textarea>
+                <input
+                  name="factor"
+                  type="number"
+                  placeholder="Factor"
+                  className="p-2 border border-gray-300 rounded-md"
+                  onChange={(e) => setFactor(parseInt(e.target.value) || 0)}
+                />
                 <button
                   className="p-2 bg-blue-500 text-white rounded-md"
                   onClick={sendMail}

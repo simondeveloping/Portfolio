@@ -28,7 +28,7 @@ export default function MiniProjects() {
       description:
         "The project is an email reminder that sends an email to the user with a predefined text on a specific date. This ensures that important reminders are never forgotten.",
       tags: ["Useful", "Attached", "InProgress"],
-      link: "/MiniProjects/EmailReminder",
+      link: "/MiniProjects/EmailBot",
     },
     {
       id: "2",

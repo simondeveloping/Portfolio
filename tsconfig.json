@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/(home)/MiniProjects/EmailReminder"
+    "app/(home)/MiniProjects/EmailBot"
   ],
   "exclude": ["node_modules"]
 }

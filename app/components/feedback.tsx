@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Feedback() {
-  const [rating, setRating] = useState(3);
+  const [rating, setRating] = useState(4);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [wisdom, setWisdom] = useState("");
@@ -56,7 +56,7 @@ export default function Feedback() {
   return (
     <div>
       <div className=" w-full h-auto flex flex-col lg:flex-row p-10 gap-10">
-        <div className="w-full lg:w-[40vw] p-5 border-2 border-white rounded-3xl flex flex-col gap-2 dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
+        <div className="w-full lg:w-[40vw] max-h-[65vh] p-5 border-2 border-white rounded-3xl flex flex-col gap-2 dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
           <div className="flex flex-row gap-2">
             {[1, 2, 3, 4, 5].map((num) => (
               <Star
