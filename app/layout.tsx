@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "WoOoohoOoo",
 };
 
-export const montserrat = Montserrat({
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
   variable: "--font-mont",

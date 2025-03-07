@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (!loading && !user) {
-      router.push("/login");
+      router.push("/unauthorized");
     }
   }, [user, loading, router]);
 
