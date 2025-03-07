@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="bg-white dark:bg-blay pt-20 ">
       <hr className="dark:border-white opacity-90 border-blay" />
       <div className="lg:flex hidden justify-around items-center p-8 dark:bg-blay bg-white">
-        <Link href="https://simonp.one">
+        <Link href="https://simontesting.pages.dev">
           {" "}
           <h1 className="lg:text-lg text-black dark:text-white">
-            <u>simonp.one</u>
+            <u>Old page</u>
           </h1>
         </Link>
         <h1 className="lg:text-lg text-black dark:text-white flex flex-row gap-2">
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
         <div className="w-full flex justify-between p-2">
           <div className="w-1/2 flex justify-center">
-            <Link href="https://7a622adc.simontesting.pages.dev/">
+            <Link href="https://simontesting.pages.dev">
               {" "}
               <h1 className="">
                 <u>Old page</u>
