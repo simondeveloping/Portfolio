@@ -6,16 +6,6 @@ import { ThemeProvider } from "../components/theme-provider";
 import React from "react";
 import { Montserrat } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
-export const metadata: Metadata = {
-  title: "simonp",
-  description: "WoOoohoOoo",
-};
-
-export const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  variable: "--font-mont",
-});
 
 export default function RootLayout({
   children,
@@ -23,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={montserrat.className}>
+    <div>
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"

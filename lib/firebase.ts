@@ -36,3 +36,4 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 export const auth = getAuth(app);
 export { database, ref, onValue, set, runTransaction, get };
+export { app };

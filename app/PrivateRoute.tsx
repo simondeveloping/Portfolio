@@ -1,22 +1,22 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useAuth } from "./AuthContext";
-import { use, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { ReactNode, useEffect } from "react";
 
-export default function PrivateRoute({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const { user } = useAuth();
+const PrivateRoute = ({ children }: { children: ReactNode }) => {
+  const { user, loading } = useAuth();
   const router = useRouter();
+
   useEffect(() => {
-    if (user === null) {
-      router.push("/unauthorized");
+    if (!loading && !user) {
+      router.push("/login");
     }
-  }, [user, router]);
-  if (user === null) {
-    return <div>Loading...</div>;
-  }
+  }, [user, loading, router]);
+
+  if (loading) return <p>Lädt...</p>;
+  if (!user) return null; // Verhindert das Rendern, bevor umgeleitet wird
+
   return <>{children}</>;
-}
+};
+
+export default PrivateRoute;
