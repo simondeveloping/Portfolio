@@ -44,17 +44,18 @@ export default function Portfolio() {
               BIOGRAPHY
             </h1>
             <p className="text-base">
-              Hi, I'm CodeBucks, a web developer and UI/UX designer with a
-              passion for creating beautiful, functional, and user-centered
-              digital experiences. With 4 years of experience in the field. I am
-              always looking for new and innovative ways to bring my clients'
-              visions to life. I believe that design is about more than just
-              making things look pretty – it's about solving problems and
-              creating intuitive, enjoyable experiences for users. Whether I'm
-              working on a website, mobile app, or other digital product, I
-              bring my commitment to design excellence and user-centered
-              thinking to every project I work on. I look forward to the
-              opportunity to bring my skills and passion to your next project.
+              Consectetur est vel maiores facilis nisi dolores. Porro porro
+              quidem repudiandae eum est inventore cumque iure. Rem inventore et
+              aut. Voluptatibus ut ea est dignissimos et alias tempore. Quia
+              occaecati asperiores maxime culpa voluptas occaecati perspiciatis.
+              Inventore eaque doloremque quibusdam unde qui voluptas repellendus
+              neque hic. Et odit veniam iusto ad consequatur illum ut dolores
+              perspiciatis. Dolorum quia sed cum molestiae aut fugit dolorum
+              beatae. Sapiente maiores deserunt suscipit dignissimos quo fuga.
+              Numquam nostrum excepturi atque earum. Atque excepturi et ut ut.
+              Est iste natus recusandae ut eum officia dolor unde. Nihil
+              voluptas voluptatem sed architecto. Quos delectus sit debitis
+              voluptatem illo rerum.
             </p>
           </div>
           <div className="w-1/3 border border-blay dark:border-white rounded-3xl max-h-[70vh] dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000] p-10 ">
