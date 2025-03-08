@@ -24,10 +24,12 @@ export default function Feedback() {
   const [feedback, setFeedback] = useState<FeedbackItem[]>([]);
   const submit = () => {
     const timestamp = new Date();
+    const finalName = name === "" ? "Anonymous" : name;
     const feedbackRef = ref(database, `feedback/${timestamp.toString()}`);
+
     set(feedbackRef, {
       rating: rating,
-      name: name,
+      name: finalName,
       message: message,
       wisdom: wisdom,
     });
@@ -121,8 +123,10 @@ export default function Feedback() {
                   </div>
 
                   <div className="">
-                    <span className="text-blue-300">Wisdom: </span>
-                    {feedback.wisdom}
+                    {feedback.wisdom && (
+                      <span className="text-blue-300">Wisdom: </span>
+                    )}
+                    {feedback.wisdom === "" ? "" : feedback.wisdom}
                   </div>
                 </div>
               ))}
