@@ -48,7 +48,12 @@ export default function Feedback() {
     get(ref(database, "feedback/")).then((snapshot) => {
       if (snapshot.exists()) {
         const feedback = snapshot.val();
-        setFeedback(Object.values(feedback));
+        const feedbackArray = Object.values(feedback);
+
+        // Sortiere das Array in absteigender Reihenfolge
+        feedbackArray.sort();
+
+        setFeedback(feedbackArray as FeedbackItem[]);
       }
     });
   };
@@ -86,7 +91,8 @@ export default function Feedback() {
               toast("Thank you for your feedback!", {
                 description: "Your feedback is valuable to me.",
               });
-              submit(); // submit-Funktion ausführen
+              submit();
+              getFeedback();
             }}
           >
             Submit Feedback

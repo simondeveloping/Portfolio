@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
-import { app } from "../lib/firebase"; // Stelle sicher, dass du Firebase initialisiert hast
+import { app } from "../lib/firebase";
 
 const AuthContext = createContext<{ user: User | null; loading: boolean }>({
   user: null,
