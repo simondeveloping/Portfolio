@@ -120,7 +120,7 @@ export default function Portfolio() {
         </div>
       </div>
       <h1 className="text-4xl lg:text-8xl font-bold text-center p-20 animate-on-scroll">
-        Tech Stack
+        Skills
       </h1>
       <div className="flex justify-center w-full "></div>
     </div>

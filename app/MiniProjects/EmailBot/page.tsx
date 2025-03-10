@@ -1,5 +1,5 @@
 "use client";
-import PrivateRoute from "../../../PrivateRoute";
+import PrivateRoute from "../../PrivateRoute";
 import { useState } from "react";
 export default function EmailBot() {
   const [formData, setFormData] = useState({

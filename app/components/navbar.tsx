@@ -26,7 +26,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
+  faPerson,
   faRightToBracket,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
@@ -82,7 +84,7 @@ useEffect(() => {
                     <SheetDescription>Feel free to follow :)</SheetDescription>
                     <div className="flex flex-col gap-5">
                       <Link
-                        href="/Portfolio"
+                        href="https://github.com/simondeveloping"
                         className="flex flex-row gap-3 items-center"
                         onClick={() => setLinksOpen(false)}
                       >
@@ -93,7 +95,7 @@ useEffect(() => {
                         <h1 className="text-2xl">Github</h1>
                       </Link>
                       <Link
-                        href="/MiniProjects"
+                        href="https://www.linkedin.com/in/simon-pham-96a8a82ab/"
                         className="flex flex-row gap-3 items-center"
                         onClick={() => setLinksOpen(false)}
                       >
@@ -104,7 +106,7 @@ useEffect(() => {
                         <h1 className="text-2xl">LinkedIn</h1>
                       </Link>
                       <Link
-                        href="/contact"
+                        href="mailto:simon.pham@web.de"
                         className="flex flex-row gap-3 items-center"
                         onClick={() => setLinksOpen(false)}
                       >
@@ -115,7 +117,7 @@ useEffect(() => {
                         <h1 className="text-2xl">Mail</h1>
                       </Link>
                       <Link
-                        href="/contact"
+                        href="https://www.instagram.com/simonp_25/"
                         className="flex flex-row gap-3 items-center"
                         onClick={() => setLinksOpen(false)}
                       >
@@ -153,28 +155,37 @@ useEffect(() => {
                   className="h-[1.6rem] w-[1.6rem] text-orange-400 p-1"
                 />
               </Link>
-              <Link href="/">
+              <Link href="https://github.com/simondeveloping">
                 <FontAwesomeIcon
                   icon={faGithub}
                   className="h-[1.6rem] w-[1.6rem] p-1"
                 />
               </Link>
-              <Link href="/" className="">
+              <Link
+                href="https://www.linkedin.com/in/simon-pham-96a8a82ab/"
+                className=""
+              >
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
                 />
               </Link>
-              <Link href="/" className="">
+              <Link href="mailto:simon.pham@web.de" className="">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
                 />
               </Link>
-              <Link href="/">
+              <Link href="https://www.instagram.com/simonp_25/">
                 <FontAwesomeIcon
                   icon={faInstagram}
                   className="h-[1.6rem] w-[1.6rem] text-red-400 p-1"
+                />
+              </Link>
+              <Link href="/">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="h-[1.6rem] w-[1.6rem] p-1"
                 />
               </Link>
             </div>

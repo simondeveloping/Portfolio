@@ -23,7 +23,7 @@ export default function InfiniteScroll() {
                 <img
                   src={src}
                   alt={`Bild ${index + 1}`}
-                  className="h-[20vh] w-[20vh] "
+                  className="h-[20vh] w-[20vh] fill-current dark:fill-white"
                 />
               </li>
             ))}

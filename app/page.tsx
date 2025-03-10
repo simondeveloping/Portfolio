@@ -96,7 +96,7 @@ export default function Home() {
             <span className="text-blue-300">S</span>tack
           </h1>
         </div>
-        <div className="w-full overflow-hidden relative bg-white dark:bg-gray-800 lg:p-10">
+        <div className="w-full overflow-hidden relative bg-white dark:bg-gray-800 lg:p-10 ">
           <InifiniteScroll />
           <br></br>
           <br></br>

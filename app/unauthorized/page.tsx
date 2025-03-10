@@ -1,3 +1,4 @@
+import { ArrowBigLeft } from "lucide-react";
 import Link from "next/link";
 export default function Unauthorized() {
   return (
@@ -10,6 +11,11 @@ export default function Unauthorized() {
         <Link href="/auth/Login" className="text-blue-300 font-bold">
           {" "}
           <u>Log in here</u>
+        </Link>
+      </div>
+      <div className="absolute left-0  p-4">
+        <Link href="/MiniProjects">
+          <ArrowBigLeft size={70} />
         </Link>
       </div>
     </div>
