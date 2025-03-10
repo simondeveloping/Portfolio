@@ -210,7 +210,7 @@ export default function MiniProjects() {
                 <Switch
                   checked={selectedtags[tags.tag]}
                   onCheckedChange={() => toggletagsSelection(tags.tag)}
-                  className="dark:data-[state=checked]:bg-white data-[state=checked]:bg-gray-700 data-[state=unchecked]:bg-gray-400"
+                  className="dark:data-[state=checked]:bg-red-400 data-[state=checked]:bg-gray-700 data-[state=unchecked]:bg-gray-400"
                 ></Switch>
                 <h1>{tags.tag}</h1>
               </div>
@@ -225,11 +225,11 @@ export default function MiniProjects() {
         </div>
       </div>
       <div className="flex w-full justify-center">
-        <div className="h-auto flex flex-wrap flex-row lg:p-10 gap-10">
+        <div className="h-auto flex flex-wrap flex-row lg:p-10 gap-10 justify-center">
           {filteredBoxes.map((box) => {
             return (
               <Link key={box.id} href={box.link}>
-                <div className="lg:max-w-[25vw]  flex flex-col border border-blay dark:border-white rounded-xl p-4 m-4 dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] gap-5 hover:scale-105 min-w-[25vw] lg:min-h-[50vh] h-auto w-[90vw]">
+                <div className="lg:max-w-[25vw]  flex flex-col border border-blay dark:border-white rounded-xl p-4 m-4 dark:shadow-[9px_9px_0px_0px_#f0efed] shadow-[9px_9px_0px_0px_#000000] gap-5 hover:scale-105 min-w-[25vw] lg:min-h-[30vh] h-auto w-[90vw]">
                   <h1 className="text-xl font-bold">
                     {highlightText(box.name, search)}
                   </h1>

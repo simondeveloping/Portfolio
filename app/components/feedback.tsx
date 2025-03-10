@@ -63,7 +63,7 @@ export default function Feedback() {
   return (
     <div>
       <div className=" w-full h-auto flex flex-col lg:flex-row p-10 gap-10">
-        <div className="w-full lg:w-[40vw] max-h-[65vh] p-5 border-2 border-white rounded-3xl flex flex-col gap-2 dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
+        <div className="w-full lg:w-[40vw] h-1/2 p-5 border-2 border-blay dark:border-white rounded-3xl flex flex-col gap-2 dark:shadow-[9px_9px_0px_0px_#ffffff] shadow-[9px_9px_0px_0px_#000000]">
           <div className="flex flex-row gap-2">
             {[1, 2, 3, 4, 5].map((num) => (
               <Star
@@ -74,10 +74,15 @@ export default function Feedback() {
               />
             ))}
           </div>
-          <Input placeholder="Name" value={name} onChange={handleNameChange} />
+          <Input
+            placeholder="Name"
+            value={name}
+            onChange={handleNameChange}
+            className="dark:border-white border-blay"
+          />
           <Textarea
             placeholder="Your message here"
-            className="min-h-[20vh]"
+            className="min-h-[20vh] dark:border-white border-blay"
             value={message}
             onChange={handleMessageChange}
           ></Textarea>
@@ -85,11 +90,12 @@ export default function Feedback() {
             placeholder="Spit Some Wisdom"
             value={wisdom}
             onChange={handleWisdomChange}
+            className="dark:border-white border-blay"
           />
           <Button
             onClick={() => {
               toast("Thank you for your feedback!", {
-                description: "Your feedback is valuable to me.",
+                description: "Your feedback has been submitted.",
               });
               submit();
               getFeedback();
@@ -111,7 +117,7 @@ export default function Feedback() {
               {feedback.map((feedback, index) => (
                 <div
                   key={index}
-                  className="flex flex-col max-w-[75vw] flex-wrap border border-white rounded-md p-2 dark:shadow-[2px_2px_0px_0px_#ffffff] shadow-[2px_2px_0px_0px_#000000] gap-2 mt-5"
+                  className="flex flex-col max-w-[75vw] flex-wrap border border-blay dark:border-white rounded-md p-2 dark:shadow-[2px_2px_0px_0px_#ffffff] shadow-[5px_5px_0px_0px_#000000] gap-2 mt-5"
                 >
                   <div className="flex flex-row gap-2">
                     {[1, 2, 3, 4, 5].map((num) => (

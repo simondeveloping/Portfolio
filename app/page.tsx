@@ -8,6 +8,8 @@ import Navbar from "./components/navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import Footer from "./components/footer";
 import { Toaster } from "../components/ui/sonner";
+import SnakeOverlay from "./components/overlay/SnakeOverlay";
+import InifiniteScroll from "./components/infiniteScroll";
 export default function Home() {
   return (
     <div>
@@ -20,11 +22,20 @@ export default function Home() {
       >
         <Navbar />
         <Overlay color1={"bg-[#004f79]"} color2={"bg-[#0070ad]"} />
-        <div className="flex h-screen justify-center items-start p-40">
-          <div className="text-4xl lg:text-8xl font-bold flex flex-row">
+        <div className="flex h-screen justify-center items-start pt-40">
+          <div className="text-4xl lg:text-8xl font-bold flex flex-row lg:hidden ">
             <span className="animate-blink text-red-400">[&nbsp; </span>
             simonp.one
             <span className="animate-blink text-blue-400">&nbsp;]</span>
+          </div>
+          <div className="hidden lg:flex">
+            <SnakeOverlay>
+              <div className="text-4xl lg:text-8xl font-bold flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <span className="animate-blink text-red-400">[&nbsp; </span>
+                simonp.one
+                <span className="animate-blink text-blue-400">&nbsp;]</span>
+              </div>
+            </SnakeOverlay>
           </div>
         </div>
         <div className="flex flex-row">
@@ -74,7 +85,27 @@ export default function Home() {
         </h1>
 
         <Feedback />
-        <div className="w-full  "></div>
+        <div className="mb-20"></div>
+        <div className="flex flex-row ">
+          <div className="w-[40vw] border-gray-500 border-t-2 border-r-2 h-[10vh] dark:bg-gray-800"></div>
+          <div className="w-[60vw] border-b-2 border-gray-500"></div>
+        </div>
+        <div className="flex justify-end dark:bg-gray-800">
+          <h1 className="text-6xl p-10 font-bold">
+            <span className="text-blue-300">T</span>ech{" "}
+            <span className="text-blue-300">S</span>tack
+          </h1>
+        </div>
+        <div className="w-full overflow-hidden relative bg-white dark:bg-gray-800 lg:p-10">
+          <InifiniteScroll />
+          <br></br>
+          <br></br>
+          <br></br>
+        </div>
+        <div className="flex flex-row ">
+          <div className="w-[70vw] border-gray-500 border-t-2 border-r-2 h-[10vh]"></div>
+          <div className="w-[30vw] border-b-2 border-gray-500 dark:bg-gray-800"></div>
+        </div>
         <Toaster />
         <Footer />
       </ThemeProvider>

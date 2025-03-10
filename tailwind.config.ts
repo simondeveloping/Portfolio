@@ -50,10 +50,15 @@ export default {
           "50%": { transform: "scale(1)", opacity: "1" },
           "100%": { transform: "scale(1)", opacity: "0" },
         },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" }, // Nur -50%, weil die Liste sich verdoppelt
+        },
       },
       animation: {
         blink: "blink 2s infinite",
         snake: "snake 3s ease-in-out infinite",
+        "infinite-scroll": "infinite-scroll 20s linear infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
