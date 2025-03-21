@@ -21,7 +21,7 @@ export default function Portfolio() {
         duration: 1000, // Dauer der Animation
         delay: 200, // Verzögerung vor der Animation
         opacity: 80, // Anfangs-Opazität
-        reset: false, // Animation wiederholt sich, wenn das Element erneut in den Viewport kommt
+        reset: true, // Animation wiederholt sich, wenn das Element erneut in den Viewport kommt
         scale: 0.9, // Skaliert das Element
         easing: "ease-in-out", // Bewegungs-Easing
       });
@@ -32,7 +32,7 @@ export default function Portfolio() {
   return (
     <div>
       <OverlayCircle color1={"bg-[#e8005f]"} color2={"bg-[#a20043]"} />
-      <div className="flex h-auto justify-center flex-wrap gap-10 mb-40">
+      <div className="flex h-auto justify-center flex-wrap gap-10 mb-10">
         <div className="flex justify-center flex-row flex-wrap w-ful lg:p-20 gap-5">
           <h1 className="text-4xl lg:text-8xl font-bold">Hello </h1>
           <h1 className="text-4xl lg:text-8xl font-bold">I&apos;m </h1>
@@ -96,30 +96,55 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-      <h1 className="text-4xl lg:text-8xl font-bold text-center p-20 animate-on-scroll">
-        Experience
+      <div className="h-[6vh] w-full flex justify-center gap-5 mb-20 lg:mb-40">
+        <a
+          className="w-auto bg-[rgba(229,229,229,0.2)] flex justify-end rounded-full items-center p-2 hover:scale-105 transform transition-all duration-300 ease-in-out group gap-2"
+          href="/resume.pdf"
+          download
+        >
+          <div className="flex justify-center w-full">
+            <h1 className="text-xl">Download Resume</h1>
+          </div>
+
+          <div className="rounded-full bg-blue-500 h-[4vh] w-[4vh] text-4xl flex items-center justify-center text-gray-300 group-hover:text-white  transition-all duration-300 ease-in-out">
+            +
+          </div>
+        </a>
+      </div>
+      <h1 className="text-6xl lg:text-8xl font-bold text-center pb-20 lg:p-20 animate-on-scroll">
+        <span className="bg-gradient-to-r from-blue-400 to-pink-200 bg-clip-text text-transparent">
+          Experience
+        </span>
       </h1>
-      <div className="flex justify-center w-full mb-20 lg:mb-40">
+      <div className="flex justify-center w-full mb-40">
         <div className="w-[80vw] lg:w-[50vw] gap-5 flex flex-row">
           <div className="text-8xl lg:pr-10 text-blue-200">•</div>
           <div className="lg:gap-4 gap-2 flex flex-col w-full">
             <h1 className="text-base lg:text-2xl">Software developer</h1>
-            <p className="text-gray-400 text-xl">(2023 - 2026) | RWTH Aachen</p>
+            <p className="text-gray-400 text-xl">
+              (2023 - 2026) |{" "}
+              <span className="text-orange-400">@ITC RWTH Aachen</span>
+            </p>
             <Progress value={progress} />
           </div>
         </div>
       </div>
-      <h1 className="text-4xl lg:text-8xl font-bold text-center p-20 animate-on-scroll">
-        Education
+      <h1 className="text-6xl lg:text-8xl font-bold text-center pb-20 lg:p-20 animate-on-scroll">
+        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Education
+        </span>
       </h1>
-      <div className="flex justify-center w-full mb-20 lg:mb-40 lg:mt-10 mt-2">
+      <div className="flex justify-center w-full mb-40 lg:mt-10 mt-2">
         <div className="w-[80vw] lg:w-[50vw] flex flex-row relative">
           <ul className="2xl:gap-40 gap-20 flex flex-col list-disc">
             <li className="gap-4 flex items-center">
               <div className="text-8xl lg:pr-10 text-blue-200 ">•</div>
               <div className="lg:gap-4 gap-2 flex flex-col w-full">
                 <h1 className="text-base lg:text-2xl">(High) School</h1>
-                <p className="text-gray-400 text-xl">(2015 - 2023) | School</p>
+                <p className="text-gray-400 text-xl">
+                  (2015 - 2023) |{" "}
+                  <span className="text-orange-400">@School</span>
+                </p>
                 <Progress value={100} />
               </div>
             </li>
@@ -133,7 +158,8 @@ export default function Portfolio() {
                 </h1>
                 <p className="text-gray-200"></p>
                 <p className="text-gray-400 text-xl">
-                  (2023 - 2026) | University
+                  (2023 - 2026) |{" "}
+                  <span className="text-orange-400">@University</span>
                 </p>
                 <Progress value={progress} />
               </div>
@@ -141,8 +167,10 @@ export default function Portfolio() {
           </ul>
         </div>
       </div>
-      <h1 className="text-4xl lg:text-8xl font-bold text-center p-20 animate-on-scroll">
-        Skills
+      <h1 className="text-6xl lg:text-8xl font-bold text-center pb-20 lg:p-20 animate-on-scroll">
+        <span className="bg-gradient-to-r from-pink-400 to-blue-500 bg-clip-text text-transparent">
+          Skills
+        </span>
       </h1>
       <div className="flex justify-center w-full "></div>
     </div>
