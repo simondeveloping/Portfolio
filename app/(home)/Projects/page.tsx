@@ -27,16 +27,13 @@ export default function Contact() {
               </div>
             </div>
             <div className="lg:w-1/2 w-full flex justify-center items-start p-4 flex-col gap-2 lg:gap-5">
-              <h1 className="text-teal-300">My own Portfolio</h1>
+              <h1 className="text-teal-300">3D Website</h1>
               <h1 className="text-xl lg:text-4xl font-bold">
-                <span className="animate-blink text-red-400">[</span>simonp.one
+                <span className="animate-blink text-red-400">[</span>3D Website
                 <span className="animate-blink text-blue-400">]</span>
               </h1>
               <p className="text-base lg:text-xl">
-                This is my own portfolio. It is a project that I have been
-                working on for a long time. The goal of this project is to
-                present my skills and projects in a clear and structured way.
-                The website is still in progress...
+                A 3D Website with Three.js and React.js
               </p>
               <Link href="https://github.com/simondeveloping/Portfolio">
                 <div className="text-2xl lg:text-4xl flex flex-row gap-5">

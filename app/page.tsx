@@ -10,6 +10,8 @@ import Footer from "./components/footer";
 import { Toaster } from "../components/ui/sonner";
 import SnakeOverlay from "./components/overlay/SnakeOverlay";
 import InifiniteScroll from "./components/infiniteScroll";
+import Bubble from "./components/bubble";
+import LittleSquare from "./components/littleSquare";
 export default function Home() {
   return (
     <div>
@@ -22,22 +24,15 @@ export default function Home() {
       >
         <Navbar />
         <Overlay color1={"bg-[#004f79]"} color2={"bg-[#0070ad]"} />
+
         <div className="flex h-screen justify-center items-start pt-40">
-          <div className="text-4xl lg:text-8xl font-bold flex flex-row lg:hidden ">
+          <div className="text-4xl lg:text-8xl font-bold flex flex-row">
             <span className="animate-blink text-red-400">[&nbsp; </span>
             simonp.one
             <span className="animate-blink text-blue-400">&nbsp;]</span>
           </div>
-          <div className="hidden lg:flex">
-            <SnakeOverlay>
-              <div className="text-4xl lg:text-8xl font-bold flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <span className="animate-blink text-red-400">[&nbsp; </span>
-                simonp.one
-                <span className="animate-blink text-blue-400">&nbsp;]</span>
-              </div>
-            </SnakeOverlay>
-          </div>
         </div>
+
         <div className="flex flex-row">
           <div className="w-[30vw] border-gray-500 border-t-2 border-r-2 h-[10vh]"></div>
           <div className="w-[70vw] border-b-2 border-gray-500"></div>

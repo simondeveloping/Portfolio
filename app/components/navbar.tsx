@@ -176,12 +176,6 @@ useEffect(() => {
                   className="h-[1.6rem] w-[1.6rem] text-blue-400 p-1"
                 />
               </Link>
-              <Link href="https://www.instagram.com/simonp_25/">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className="h-[1.6rem] w-[1.6rem] text-red-400 p-1"
-                />
-              </Link>
               <Link href="/">
                 <FontAwesomeIcon
                   icon={faUser}
