@@ -14,7 +14,7 @@ body {
 
 html {
   scrollbar-width: thin; /* "auto", "thin" oder "none" */
-  scrollbar-color: #6d7276 #f3f4f600;
+  scrollbar-color: #252222 #f1f1f1; /* Farbe für den Griff und den Hintergrund */
 }
 
 @layer base {
@@ -87,4 +87,25 @@ html {
   box-shadow: rgba(46, 195, 240, 0.4) 5px 5px, rgba(46, 195, 240, 0.3) 10px 10px,
     rgba(46, 233, 240, 0.2) 15px 15px, rgba(46, 169, 240, 0.1) 20px 20px,
     rgba(46, 169, 240, 0.05) 25px 25px;
+}
+
+.perspective {
+  perspective: 3000px;
+}
+
+.parallax-layer {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.translate-z-\[-100px\] {
+  transform: translateZ(-4000px) scale(3);
+}
+
+.translate-z-\[-50px\] {
+  transform: translateZ(-2000px) scale(2.5);
+}
+
+.translate-z-0 {
+  transform: translateZ(0);
 }

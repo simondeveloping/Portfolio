@@ -30,12 +30,20 @@ import {
   faRightToBracket,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { usePathname } from "next/navigation";
+import { text } from "stream/consumers";
 
 export default function Navbar() {
   // const [textColor, setTextColor] = useState("text-white");
   const [sheetOpen, setSheetOpen] = useState(false);
   const [linksOpen, setLinksOpen] = useState(false);
-
+  const pathName = usePathname();
+  let bgColor = "dark:bg-blay bg-white";
+  let textColor = "dark:text-white text-blay";
+  if (pathName === "/") {
+    bgColor = "bg-[#f7f7ef]";
+    textColor = "text-blay";
+  }
   /*
   const handleScroll = () => {
     const sections = document.querySelectorAll(".bg-white, .bg-gray-500");
@@ -67,7 +75,7 @@ useEffect(() => {
   return (
     <nav className="">
       {/*To make nav sticky add  {`sticky top-0 ${textColor} z-50 bg-transparent`}*/}
-      <div className="dark:dark:bg-[#1b1b1b] bg-white text-black dark:text-white lg:flex lg:justify-center ">
+      <div className={`${bgColor} ${textColor} lg:flex lg:justify-center `}>
         <div className="text-center p-9 flex flex-row lg:justify-around justify-between xl:text-lg lg:text-base sm:text-sm md:text-sm lg:w-[100vw]">
           <div className="flex flex-row justify-center lg:w-[30vw]">
             <div className="flex lg:hidden">
