@@ -1,6 +1,7 @@
 // components/ThreeScene.tsx
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box } from "@react-three/drei";
+
 import { OrbitControls } from "@react-three/drei";
 // Eine Funktion, die den Würfel animiert
 const RotatingCube: React.FC = () => {
