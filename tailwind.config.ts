@@ -11,6 +11,8 @@ export default {
     extend: {
       colors: {
         blay: "#1b1b1b",
+        cream: "#f7f7ef",
+        cookie: "#252222",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: "hsl(var(--primary))",

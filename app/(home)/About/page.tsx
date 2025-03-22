@@ -36,7 +36,9 @@ export default function Portfolio() {
         <div className="flex justify-center flex-row flex-wrap w-ful lg:p-20 gap-5">
           <h1 className="text-4xl lg:text-8xl font-bold">Hello </h1>
           <h1 className="text-4xl lg:text-8xl font-bold">I&apos;m </h1>
-          <h1 className="text-4xl lg:text-8xl font-bold">Simon</h1>
+          <h1 className="text-4xl lg:text-8xl font-bold">
+            <span className="text-blue-400">S</span>imon
+          </h1>
         </div>
         <div className="w-[90vw] min-h-[80vh] flex flex-wrap justify-around">
           <div className="flex flex-col-reverse lg:flex-row w-full lg:w-2/3 justify-start gap-5">
@@ -98,7 +100,7 @@ export default function Portfolio() {
       </div>
       <div className="h-[6vh] w-full flex justify-center gap-5 mb-20 lg:mb-40">
         <a
-          className="w-auto bg-[rgba(229,229,229,0.2)] flex justify-end rounded-full items-center p-2 hover:scale-105 transform transition-all duration-300 ease-in-out group gap-2"
+          className="w-auto bg-[rgba(0,0,0,0.2)] dark:bg-[rgba(229,229,229,0.2)] flex justify-end rounded-full items-center p-2 hover:scale-105 transform transition-all duration-300 ease-in-out group gap-2"
           href="/resume.pdf"
           download
         >
@@ -112,7 +114,7 @@ export default function Portfolio() {
         </a>
       </div>
       <h1 className="text-6xl lg:text-8xl font-bold text-center pb-20 lg:p-20 animate-on-scroll">
-        <span className="bg-gradient-to-r from-blue-400 to-pink-200 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent">
           Experience
         </span>
       </h1>
