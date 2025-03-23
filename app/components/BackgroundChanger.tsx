@@ -10,7 +10,7 @@ export default function BackgroundChanger() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Bildschirmgröße für Handys, z.B. 768px
-      setIsTablet(window.innerWidth <= 1200 && window.innerWidth > 768); // Bildschirmgröße für Tablets, z.B. 1024px
+      setIsTablet(window.innerWidth <= 1366 && window.innerWidth > 768); // Bildschirmgröße für Tablets, z.B. 1024px
     };
 
     const handleScroll = () => {
