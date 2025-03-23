@@ -25,6 +25,7 @@ export default function Home() {
       >
         <Navbar />
         <Overlay color1={"bg-[#004f79]"} color2={"bg-[#0070ad]"} />
+
         <BackgroundChanger />
 
         <div className="flex h-screen justify-start items-center pt-20 2xl:pt-40 text-cookie flex flex-col gap-20">
