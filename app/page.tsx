@@ -11,6 +11,7 @@ import { Toaster } from "../components/ui/sonner";
 import InifiniteScroll from "./components/infiniteScroll";
 import BackgroundChanger from "./components/BackgroundChanger";
 import TechStack from "./components/techStack";
+import HighlightButton from "./components/highlightButton";
 
 export default function Home() {
   return (
@@ -36,8 +37,8 @@ export default function Home() {
             Designed to show off.
           </h1>
         </div>
-        <div className="h-auto flex items-center flex-col mb-20">
-          <div className="flex justify-center items-center h-[150vh] w-[70vw]">
+        <div className="h-auto flex items-center flex-col mb-80">
+          <div className="flex justify-center items-center h-[150vh] w-[90vw] lg:w-[70vw]">
             <h1 className="text-2xl lg:text-5xl font-semibold text-center leading-relaxed text-cream">
               Hello, I&apos;m Simon. This is my portfolio website, where I share
               my projects, insights, and experiences. I hope you enjoy!
@@ -47,8 +48,10 @@ export default function Home() {
         <div className="h-[200vh] flex items-center justify-start flex-col relative mt-50">
           <TechStack />
         </div>
-        <div className="h-[200vh] w-full text-cookie font-bold flex justify-center items-center">
-          Not finish yet
+        <HighlightButton />
+
+        <div className="h-[200vh] w-full flex justify-center items-center">
+          <div className="w-[90vw] lg:w-[70vw] flex justify-center items-center flex-col gap-10"></div>
         </div>
         <div className="flex flex-row">
           <div className="w-[30vw] border-gray-500 border-t-2 border-r-2 h-[10vh]"></div>
