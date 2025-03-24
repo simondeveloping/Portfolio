@@ -11,7 +11,7 @@ export default function TechStack() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="perspective relative 2xl:h-[100vh] h-[150vh] w-[95vw]">
+    <div className="perspective relative 2xl:h-[100vh] xl:h-[150vh] lg:h-[100vh] max-h-[150vh] w-[95vw] mb-80">
       {/* Hinterste Ebene */}
       <div
         className="parallax-layer absolute inset-0 flex justify-center items-center opacity-40 text-2xl lg:text-3xl 2xl:text-4xl overflow-hidden"

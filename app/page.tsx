@@ -46,8 +46,9 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <div className="h-[200vh] flex items-center justify-start flex-col relative mt-50">
+        <div className="h-auto flex items-center justify-start flex-col relative mt-50">
           <TechStack />
+          <div className="h-screen"></div>
         </div>
         <HighlightButton />
 
