@@ -102,15 +102,6 @@ export default function Home() {
 
         <Feedback />
         <div className="mb-20"></div>
-        <div className="flex flex-row ">
-          <div className="w-[40vw] border-gray-500 border-t-2 border-r-2 h-[10vh] dark:bg-gray-800"></div>
-          <div className="w-[60vw] border-b-2 border-gray-500"></div>
-        </div>
-
-        <div className="flex flex-row ">
-          <div className="w-[70vw] border-gray-500 border-t-2 border-r-2 h-[10vh]"></div>
-          <div className="w-[30vw] border-b-2 border-gray-500 dark:bg-gray-800"></div>
-        </div>
 
         <Toaster />
         <Footer />
