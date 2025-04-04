@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 body {
   font-family: var(--font-mont), sans-serif;
@@ -97,15 +98,27 @@ html {
   transform-style: preserve-3d;
   will-change: transform;
 }
-
-.translate-z-\[-100px\] {
-  transform: translateZ(-4000px) scale(3);
+.lora {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-style: regular;
+}
+.layer1 {
+  opacity: 1;
 }
 
-.translate-z-\[-50px\] {
-  transform: translateZ(-2000px) scale(2.5);
+.layer2 {
+  opacity: 0.8;
 }
 
-.translate-z-0 {
-  transform: translateZ(0);
+.layer3 {
+  opacity: 0.6;
+}
+
+.layer4 {
+  opacity: 0.3;
+}
+
+.layer5 {
+  opacity: 0.05;
 }

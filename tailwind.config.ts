@@ -36,7 +36,7 @@ export default {
         chart5: "hsl(var(--chart-5))",
       },
       screens: {
-        "2xl": "1536px",
+        "2xl": "1600px",
       },
       keyframes: {
         blink: {
