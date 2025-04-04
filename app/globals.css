@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   font-family: var(--font-mont), sans-serif;
   background-color: white;
@@ -100,8 +99,9 @@ html {
 }
 .lora {
   font-family: "Lora", serif;
+  font-optical-sizing: auto;
   font-weight: 400;
-  font-style: regular;
+  font-style: normal;
 }
 .layer1 {
   opacity: 1;

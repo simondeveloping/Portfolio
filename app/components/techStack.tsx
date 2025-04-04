@@ -22,7 +22,7 @@ export default function TechStack() {
     offset: ["-70vh start", "end start"],
   });
 
-  const layer1 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 10 : 10]);
+  const layer1 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 10 : 1]);
   const layer2 = useTransform(
     scrollYProgress,
     [0, 1],
@@ -58,7 +58,7 @@ export default function TechStack() {
       </motion.div>
       <motion.div
         style={{ y: layer1 }}
-        className="absolute top-[30%] lg:top-[40%] lg:right-[20%] right-[5%] layer1 flex justify-center items-center 2xl:text-6xl lg:text-4xl text-3xl"
+        className="absolute top-[30%] lg:top-[40%] lg:right-[5%] right-[5%] layer1 flex justify-center items-center 2xl:text-6xl lg:text-4xl text-3xl"
       >
         <img src="/firebase.svg" alt="firebase.js" className="w-10 h-10 " />
         Firebase
@@ -72,15 +72,15 @@ export default function TechStack() {
       </motion.div>
       <motion.div
         style={{ y: layer1 }}
-        className="absolute bottom-0 lg:right-[35%] right-[10%] flex justify-center items-center layer1 2xl:text-6xl lg:text-4xl text-3xl"
+        className="absolute bottom-[-20%] lg:right-[35%] right-[10%] flex justify-center items-center layer1 2xl:text-6xl lg:text-4xl text-3xl"
       >
         <img src="/nodejs.svg" alt="NodeJs" className="w-10 h-10" />
         node.js
       </motion.div>
 
       {/* Text Layer */}
-      <motion.div style={{ y: layer3 }} className="absolute top-[30%]">
-        <h1 className="2xl:text-5xl lg:text-4xl text-2xl lg:w-[60vw] w-[80vw] text-center">
+      <motion.div style={{ y: layer5 }} className="absolute top-[10%]">
+        <h1 className="2xl:text-6xl lg:text-5xl text-2xl lg:w-[60vw] w-[80vw] text-center  !leading-relaxed lora">
           These are the technologies I use in general. I am always open to new
           technologies and love to learn new things.
         </h1>
@@ -102,7 +102,7 @@ export default function TechStack() {
       </motion.div>
       <motion.div
         style={{ y: layer2 }}
-        className="absolute bottom-[30%] right-[38%] layer2 flex justify-center items-center 2xl:text-5xl lg:text-3xl text-2xl"
+        className="absolute bottom-[10%] right-[38%] layer2 flex justify-center items-center 2xl:text-5xl lg:text-3xl text-2xl"
       >
         <img src="/react.svg" alt="React" className="w-10 h-10" />
         React
@@ -139,7 +139,7 @@ export default function TechStack() {
       </motion.div>
       <motion.div
         style={{ y: layer3 }}
-        className="absolute bottom-[30%] right-[5%] layer3 flex justify-center items-center 2xl:text-5xl lg:text-3xl text-2xl"
+        className="absolute bottom-[30%] right-[10%] layer3 flex justify-center items-center 2xl:text-5xl lg:text-3xl text-2xl"
       >
         <img src="/github.svg" alt="Github" className="w-10 h-10" />
         Github

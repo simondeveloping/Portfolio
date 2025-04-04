@@ -12,6 +12,7 @@ import InifiniteScroll from "./components/infiniteScroll";
 import BackgroundChanger from "./components/BackgroundChanger";
 import HighlightButton from "./components/highlightButton";
 import TechStack from "./components/techStack";
+import ScrollBar from "./components/ScrollBarAnimation";
 export default function Home() {
   return (
     <div>
@@ -33,13 +34,13 @@ export default function Home() {
             simonp.one
             <span className="animate-blink text-blue-400">&nbsp;]</span>
           </div>
-          <h1 className="text-4xl lg:text-6xl 2xl:text-8xl font-bold text-center">
+          <h1 className="text-4xl lg:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold text-center">
             Designed to show off.
           </h1>
         </div>
         <div className="h-auto flex items-center flex-col mb-80">
           <div className="flex justify-center items-center h-[150vh] w-[90vw] lg:w-[70vw]">
-            <h1 className="text-2xl lg:text-6xl 2xl:text-7xl font-normal text-center !leading-relaxed text-cream lora">
+            <h1 className="text-2xl lg:text-5xl 2xl:text-6xl 3xl:text-8xl font-normal text-center !leading-relaxed text-cream lora">
               Hello, I&apos;m Simon. This is my portfolio website, where I share
               my projects, insights, and experiences. I really enjoyed building
               this portfolio. I hope you enjoy!
@@ -50,7 +51,7 @@ export default function Home() {
           <TechStack />
         </div>
         <HighlightButton />
-
+        <ScrollBar />
         <div className="h-[200vh] w-full flex justify-center items-center">
           <div className="w-[90vw] lg:w-[70vw] flex justify-center items-center flex-col gap-10">
             <h1 className="font-bold  text-6xl text-transparent stroke-red stroke-[2px]">
@@ -105,7 +106,7 @@ export default function Home() {
         </h1>
 
         <Feedback />
-        <div className="mb-20"></div>
+        <div className="h-screen"></div>
 
         <Toaster />
         <Footer />

@@ -28,7 +28,7 @@ export default function BackgroundChanger() {
       } else if (scrollPercent >= 46 && scrollPercent < 70) {
         setBgClass("bg-cream");
       } else {
-        setBgClass("bg-blay");
+        setBgClass("bg-cream");
       }
     };
 

@@ -37,6 +37,7 @@ export default {
       },
       screens: {
         "2xl": "1600px",
+        "3xl": "2000px",
       },
       keyframes: {
         blink: {
@@ -56,11 +57,20 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" }, // Nur -50%, weil die Liste sich verdoppelt
         },
+        rainbow: {
+          "0%": { textDecorationColor: "red" },
+          "20%": { textDecorationColor: "orange" },
+          "40%": { textDecorationColor: "yellow" },
+          "60%": { textDecorationColor: "green" },
+          "80%": { textDecorationColor: "blue" },
+          "100%": { textDecorationColor: "violet" },
+        },
       },
       animation: {
         blink: "blink 2s infinite",
         snake: "snake 3s ease-in-out infinite",
         "infinite-scroll": "infinite-scroll 20s linear infinite",
+        rainbow: "rainbow 3s infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
