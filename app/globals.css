@@ -98,7 +98,7 @@ html {
   will-change: transform;
 }
 .lora {
-  font-family: "Lora", serif;
+  font-family: var(--font-lora), sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

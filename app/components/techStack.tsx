@@ -80,7 +80,7 @@ export default function TechStack() {
 
       {/* Text Layer */}
       <motion.div style={{ y: layer5 }} className="absolute top-[10%]">
-        <h1 className="2xl:text-6xl lg:text-5xl text-2xl lg:w-[60vw] w-[80vw] text-center  !leading-relaxed lora">
+        <h1 className="2xl:text-6xl lg:text-4xl text-2xl 2xl:w-[60vw] lg:w-[70vw] w-[80vw] text-center  !leading-relaxed lora">
           These are the technologies I use in general. I am always open to new
           technologies and love to learn new things.
         </h1>

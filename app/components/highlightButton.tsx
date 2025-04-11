@@ -12,7 +12,7 @@ export default function HighlightButton() {
       } mt-40`}
     >
       <div className=" w-[90vw] lg:w-[70vw] flex justify-center items-center flex-col gap-10">
-        <h1 className="text-2xl 2xl:text-6xl lg:text-5xl text-cookie text-center !leading-relaxed lora">
+        <h1 className="text-2xl 2xl:text-6xl lg:text-4xl text-cookie text-center !leading-relaxed lora">
           I&apos;m{" "}
           <span className="bg-blue-200 box-decoration-clone px-1">
             currently studying

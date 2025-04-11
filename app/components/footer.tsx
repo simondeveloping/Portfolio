@@ -11,7 +11,7 @@ export default function Footer() {
     textColor = "text-cream";
   }
   return (
-    <footer className={`${bgColor} ${textColor} flex justify-center`}>
+    <footer className={`${bgColor} ${textColor} flex justify-center mt-40`}>
       <div className="h-auto flex flex-col justify-around w-full ">
         <div className="flex lg:flex-row flex-col">
           <div className="w-full lg:w-1/4 flex flex-col h-full justify-start items-start gap-1 pt-20 pl-10">
