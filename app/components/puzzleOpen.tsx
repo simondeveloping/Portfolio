@@ -62,7 +62,7 @@ export default function FancyGate() {
               }}
             >
               <div className="absolute top-[70%] left-full bg-cookie rounded-r-full h-[20vh] w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
-              <div className="absolute top-40 left-[90%] bg-cookie rounded-r-full h-[20vh] w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
+              <div className="absolute top-40 left-full bg-cookie rounded-r-full h-[20vh] w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
             </motion.div>
 
             {/* Rechte Tür */}
