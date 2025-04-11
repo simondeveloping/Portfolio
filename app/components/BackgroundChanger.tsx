@@ -17,13 +17,13 @@ export default function BackgroundChanger() {
         setBgClass("bg-[#615858]");
       } else if (scrollPercent >= 5 && scrollPercent < 7) {
         setBgClass("bg-[#403a3a]");
-      } else if (scrollPercent >= 7 && scrollPercent < 35) {
+      } else if (scrollPercent >= 7 && scrollPercent < 25) {
         setBgClass("bg-cookie");
-      } else if (scrollPercent >= 35 && scrollPercent < 40) {
+      } else if (scrollPercent >= 25 && scrollPercent < 27) {
         setBgClass("bg-[#82827f]");
-      } else if (scrollPercent >= 40 && scrollPercent < 43) {
+      } else if (scrollPercent >= 27 && scrollPercent < 30) {
         setBgClass("bg-[#a1a19f]");
-      } else if (scrollPercent >= 43 && scrollPercent < 46) {
+      } else if (scrollPercent >= 30 && scrollPercent < 46) {
         setBgClass("bg-cream");
       } else if (scrollPercent >= 46 && scrollPercent < 70) {
         setBgClass("bg-cream");

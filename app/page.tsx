@@ -14,6 +14,7 @@ import HighlightButton from "./components/highlightButton";
 import TechStack from "./components/techStack";
 import ScrollBar from "./components/ScrollBarAnimation";
 import PuzzleOpen from "./components/puzzleOpen";
+import { Pi } from "lucide-react";
 export default function Home() {
   return (
     <div>
@@ -52,56 +53,55 @@ export default function Home() {
           <TechStack />
         </div>
         <HighlightButton />
+        <div className="h-screen"></div>
         <PuzzleOpen />
-        {/*<ScrollBar /> */}
-        <div className="h-[200vh] w-full flex justify-center items-center">
-          <div className="w-[90vw] lg:w-[70vw] flex justify-center items-center flex-col gap-10">
-            <h1 className="font-bold  text-6xl text-transparent stroke-red stroke-[2px]">
-              hallo
+        <div className="h-[80vh]"></div>
+
+        <div className="h-auto flex flex-col">
+          <div className="flex justify-center w-full h-auto mb-40 p-5">
+            <h1 className="text-4xl lg:text-6xl text-cookie 2xl:w-1/2 lg:w-3/4 lora text-center">
+              Here are some information about this page
             </h1>
           </div>
+          <div className="w-full flex items-center justify-center flex-col gap-20">
+            <div className="w-full lg:w-3/4 flex justify-around h-auto lg:flex-row flex-col p-5 gap-5">
+              <div className="flex flex-col w-full lg:w-1/2 justify-center items-center gap-5">
+                <h1 className="text-2xl lg:text-4xl text-cookie">
+                  - Browser Usage -
+                </h1>
+                <h1 className="text-xl lg:text-3xl text-cookie text-center lora items-center justify-center flex ">
+                  {" "}
+                  This section shows the distribution of browsers used by
+                  visitors in 2025. By understanding which browsers are most
+                  popular, I can ensure the website runs smoothly across all
+                  platforms. It&apos;s valuable insight for improving user
+                  experience and optimizing performance.
+                </h1>
+              </div>
+              <PiChart />
+            </div>
+            <div className="w-full lg:w-3/4 flex lg:flex-row gap-5 flex-col-reverse p-5 gap-5">
+              <VisitorChart />
+              <div className="flex w-full lg:w-1/2 flex-col justify-center items-center gap-5">
+                <h1 className="text-cookie lg:text-4xl text-2xl">
+                  - Total Visitor -
+                </h1>
+                <h1 className="text-xl lg:text-3xl text-cookie text-center lora items-center justify-center flex ">
+                  This data provides a valuable look at when and how people
+                  interact with my website. For me, it&apos;s fascinating to see
+                  which months or events drive the most engagement.
+                  Understanding these trends helps me improve the site and
+                  better connect with visitors.
+                </h1>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-row">
-          <div className="w-[30vw] border-gray-500 border-t-2 border-r-2 h-[10vh]"></div>
-          <div className="w-[70vw] border-b-2 border-gray-500"></div>
-        </div>
+        <div className="h-[200vh]"></div>
         <div className="p-10">
           <YearProgress />
         </div>
-        <div className="w-full flex lg:flex-row justify-between h-auto flex-col-reverse">
-          <VisitorChart />
-          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 gap-1 lg:gap-5">
-            {" "}
-            <h1 className="text-3xl font-bold">Total Visitors Overview</h1>
-            <p className="p-10">
-              Welcome to the visitor insights for 2025. This data provides a
-              valuable look at when and how people interact with my website. For
-              me, it&apos;s fascinating to see which months or events drive the
-              most engagement. Understanding these trends helps me improve the
-              site and better connect with visitors.
-            </p>
-          </div>
-        </div>
-        <div className="w-full flex lg:flex-row justify-between h-auto mb-20 flex-col">
-          <div className="w-full lg:w-1/2 flex justify-center items-center flex-col gap-1 lg:gap-5 p-10">
-            <h1 className="text-3xl font-bold">Browser Usage</h1>
-            <p>
-              This section shows the distribution of browsers used by visitors
-              in 2025. By understanding which browsers are most popular, I can
-              ensure the website runs smoothly across all platforms. It&apos;s
-              valuable insight for improving user experience and optimizing
-              performance.
-            </p>
-          </div>
-          <div className="w-full lg:w-1/2">
-            <PiChart />
-          </div>
-        </div>
 
-        <div className="w-full h-[10vh] flex flex-row">
-          <div className="w-[70vw] border-b-2 border-gray-500"></div>
-          <div className="w-[30vw] border-l-2 border-t-2 border-gray-500"></div>
-        </div>
         <h1 className="text-6xl font-bold p-10">
           <span className="text-red-400">G</span>ot{" "}
           <span className="text-red-400">f</span>eedback&nbsp;?

@@ -72,11 +72,13 @@ export function VisitorChart() {
   }, []);
   return (
     <Card className="w-full lg:w-1/2">
-      <CardHeader className="bg-white dark:bg-blay">
-        <CardTitle>Visitor Overview</CardTitle>
-        <CardDescription>January - December 2025</CardDescription>
+      <CardHeader className="bg-cream">
+        <CardTitle className="text-cookie text-2xl">Visitor Overview</CardTitle>
+        <CardDescription className="text-cookie">
+          January - December 2025
+        </CardDescription>
       </CardHeader>
-      <CardContent className="bg-white dark:bg-blay ">
+      <CardContent className="bg-cream ">
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
@@ -108,13 +110,13 @@ export function VisitorChart() {
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm bg-white dark:bg-blay">
+      <CardFooter className="flex-col items-start gap-2 text-sm bg-cream">
         <div className="flex gap-2 font-medium leading-none">
-          <div className="flex items-center">
+          <div className="flex items-center text-cookie">
             These are the visitors for each month
           </div>
         </div>
-        <div className="leading-none text-muted-foreground">
+        <div className="leading-none text-muted-foreground text-cookie">
           Currently January has the most visitors :)
         </div>
       </CardFooter>

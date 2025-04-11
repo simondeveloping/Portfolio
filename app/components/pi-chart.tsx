@@ -102,12 +102,12 @@ export function PiChart() {
     return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
   }, [chartData]);
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0 bg-white dark:bg-blay">
-        <CardTitle className="text-xl">Browser Usage</CardTitle>
-        <CardDescription>2024 - Today</CardDescription>
+    <Card className="flex flex-col ">
+      <CardHeader className="items-center pb-0 bg-cream">
+        <CardTitle className="text-xl text-cookie">Browser Usage</CardTitle>
+        <CardDescription className="text-cookie">2024 - Today</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-0 bg-white dark:bg-blay">
+      <CardContent className="flex-1 pb-0 bg-cream">
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
@@ -137,14 +137,14 @@ export function PiChart() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="text-cookie text-3xl font-bold "
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
+                          className="text-cookie"
                         >
                           Visitors
                         </tspan>
@@ -157,9 +157,9 @@ export function PiChart() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm bg-white dark:bg-blay">
+      <CardFooter className="flex-col gap-2 text-sm bg-cream">
         <div className="flex items-center gap-2 font-medium leading-none"></div>
-        <div className="leading-none text-muted-foreground">
+        <div className="leading-none text-cookie">
           Currently Firefox has the most visitors :)
         </div>
       </CardFooter>

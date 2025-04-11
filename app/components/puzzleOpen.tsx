@@ -52,7 +52,7 @@ export default function FancyGate() {
         <div className="h-[60vh] bg-cookie"></div>
 
         <div className="sticky top-0 h-screen overflow-hidden">
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full justify-center items-center flex">
             {/* Linke Tür */}
             <motion.div
               className="absolute top-0 left-0 h-full bg-cookie z-10"
@@ -78,8 +78,9 @@ export default function FancyGate() {
             </motion.div>
 
             {/* Text */}
-            <div className="absolute inset-0 flex items-center justify-center text-cookie text-4xl z-[-10]">
-              heheheheh
+            <div className="flex items-center justify-center text-center text-cookie text-4xl z-[-10] w-1/2">
+              Accusantium eos officia accusantium in enim ea veniam dolor aut.
+              Aut et et veniam voluptatibus porro. Cum ea consequatur et rem.
             </div>
           </div>
         </div>
