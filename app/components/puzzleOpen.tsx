@@ -4,6 +4,7 @@ import { motion, useSpring, useTransform, useMotionValue } from "framer-motion";
 export default function FancyGate() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   // Smooth animation
   const rawProgress = useMotionValue(0);
@@ -12,16 +13,18 @@ export default function FancyGate() {
     damping: 20,
   });
 
-  // transformierte Werte für Türen
-  const leftDoorX = useTransform(
-    springProgress,
-    (p) => (-p * window.innerWidth) / 2
-  );
-  const rightDoorX = useTransform(
-    springProgress,
-    (p) => (p * window.innerWidth) / 2
-  );
-  const handleX = useTransform(springProgress, (p) => -p * window.innerWidth);
+  // Update window width
+  useEffect(() => {
+    const updateWidth = () => setWindowWidth(window.innerWidth);
+    updateWidth(); // Initial
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  // transformierte Werte für Türen (nur wenn windowWidth > 0 verfügbar ist)
+  const leftDoorX = useTransform(springProgress, (p) => (-p * windowWidth) / 2);
+  const rightDoorX = useTransform(springProgress, (p) => (p * windowWidth) / 2);
+  const handleX = useTransform(springProgress, (p) => -p * windowWidth);
 
   useEffect(() => {
     const onScroll = () => {
@@ -73,7 +76,7 @@ export default function FancyGate() {
                 x: rightDoorX,
               }}
             >
-              <div className="absolute top-40 left-[90%] bg-cream rounded-r-full h-[20vh] lg:w-[15vh] flex items-center justify-center text-2xl text-white z-[0]"></div>
+              <div className="absolute top-40 right-[90%] bg-cream rounded-r-full h-[20vh] lg:w-[15vh] flex items-center justify-center text-2xl text-white z-[0]"></div>
               <div className="absolute top-[70%] right-[90%] bg-cream rounded-r-full h-[20vh] lg:w-[15vh] flex items-center justify-center text-2xl text-white z-[0]"></div>
             </motion.div>
 
