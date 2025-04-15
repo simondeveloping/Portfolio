@@ -46,7 +46,7 @@ export default function TechStack() {
   return (
     <div
       ref={ref}
-      className="w-full h-[150vh]  relative flex justify-center items-center"
+      className="w-full h-[150vh]  relative flex justify-center items-center text-white"
     >
       {/* Layer 1 */}
       <motion.div

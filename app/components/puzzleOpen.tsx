@@ -61,8 +61,8 @@ export default function FancyGate() {
                 x: leftDoorX,
               }}
             >
-              <div className="absolute top-[70%] left-full bg-cookie rounded-r-full h-[20vh] w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
-              <div className="absolute top-40 left-full bg-cookie rounded-r-full h-[20vh] w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
+              <div className="absolute top-[70%] left-full bg-cookie rounded-r-full h-[10vh] w-[5vh] lg:h-[20vh] lg:w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
+              <div className="absolute top-40 left-full bg-cookie rounded-r-full h-[10vh] w-[5vh] lg:h-[20vh] lg:w-[10vh] flex items-center justify-center text-2xl text-white z-10"></div>
             </motion.div>
 
             {/* Rechte Tür */}
@@ -73,12 +73,12 @@ export default function FancyGate() {
                 x: rightDoorX,
               }}
             >
-              <div className="absolute top-40 right-[90%] bg-cream rounded-r-full h-[20vh] lg:w-[15vh] flex items-center justify-center text-2xl text-white z-[0]"></div>
+              <div className="absolute top-40 left-[90%] bg-cream rounded-r-full h-[20vh] lg:w-[15vh] flex items-center justify-center text-2xl text-white z-[0]"></div>
               <div className="absolute top-[70%] right-[90%] bg-cream rounded-r-full h-[20vh] lg:w-[15vh] flex items-center justify-center text-2xl text-white z-[0]"></div>
             </motion.div>
 
             {/* Text */}
-            <div className="flex items-center justify-center text-center text-cookie text-4xl z-[-10] w-1/2">
+            <div className="flex items-center justify-center text-center text-cookie text-3xl lg:text-4xl z-[-10] w-1/2">
               Accusantium eos officia accusantium in enim ea veniam dolor aut.
               Aut et et veniam voluptatibus porro. Cum ea consequatur et rem.
             </div>

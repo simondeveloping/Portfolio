@@ -18,17 +18,14 @@ export default function HighlightButton() {
             currently studying
           </span>{" "}
           applied Mathematics and Computer science. Moreover I&apos;m working as
-          a Software Developer at RWTH Aachen University.
-        </h1>
-        <p className="text-cookie 2xl:text-5xl lg:text-3xl lora">
-          You can find more about me&nbsp;
+          a Software Developer at RWTH Aachen University. More about me{" "}
           <Link
             href="/About"
             className="text-blue-400 underline hover:animate-rainbow"
           >
             here
           </Link>
-        </p>
+        </h1>
         <div className=" flex flex-row gap-10 items-center"></div>
       </div>
     </div>
