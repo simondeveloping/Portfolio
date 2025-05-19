@@ -122,3 +122,8 @@ html {
 .layer5 {
   opacity: 0.05;
 }
+
+.text-shadow1 {
+  font-weight: 600;
+  text-shadow: 10px 6px 0px rgba(255, 255, 255, 0.2);
+}
