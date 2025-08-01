@@ -4,6 +4,7 @@ import { database } from "@/lib/firebase";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ArrowRightLeft } from "lucide-react";
+import Link from "next/link";
 export default function Rps() {
   const [nameInput, setNameInput] = useState("");
   const [name, setName] = useState("");
@@ -71,7 +72,7 @@ export default function Rps() {
                   const totalPlayers =
                     (data.player1 ? 1 : 0) + (data.player2 ? 1 : 0);
                   return (
-                    <a
+                    <Link
                       key={room}
                       className="flex flex-row gap-10"
                       href={`/games/rps/${room}?name=${encodeURIComponent(
@@ -82,7 +83,7 @@ export default function Rps() {
                         <h1>{room}</h1>
                         Player: {totalPlayers} / 2
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
