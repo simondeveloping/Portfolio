@@ -78,11 +78,11 @@ export default function Feedback() {
             placeholder="Name"
             value={name}
             onChange={handleNameChange}
-            className="border-cookie"
+            className="border-cookie text-cookie"
           />
           <Textarea
             placeholder="Your message here"
-            className="min-h-[20vh] border-cookie"
+            className="min-h-[20vh] border-cookie text-cookie"
             value={message}
             onChange={handleMessageChange}
           ></Textarea>
@@ -90,7 +90,7 @@ export default function Feedback() {
             placeholder="Spit Some Wisdom"
             value={wisdom}
             onChange={handleWisdomChange}
-            className="border-cookie"
+            className="border-cookie text-cookie"
           />
           <Button
             className="bg-cookie"
