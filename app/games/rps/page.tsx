@@ -8,7 +8,9 @@ import Link from "next/link";
 export default function Rps() {
   const [nameInput, setNameInput] = useState("");
   const [name, setName] = useState("");
-  const [roomData, setRoomData] = useState({});
+  const [roomData, setRoomData] = useState<
+    Record<string, { player1?: string; player2?: string }>
+  >({});
   const rooms = ["match1", "match2", "match3"];
   useEffect(() => {
     const savedName = localStorage.getItem("rpsName");
