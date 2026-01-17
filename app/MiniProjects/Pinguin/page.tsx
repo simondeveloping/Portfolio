@@ -75,8 +75,8 @@ export default function Pinguin() {
               <div>
                 <div className="gap-4 flex flex-col mb-4 border-2 border-black p-4 rounded-xl mt-4">
                   <h1>
-                    <span className="font-bold">Wann?:</span> Nächsten Freitag
-                    nach der Arbeit
+                    <span className="font-bold">Wann?:</span> Samstag oder
+                    Sonntag
                   </h1>
                   <h1>
                     {" "}
@@ -89,7 +89,11 @@ export default function Pinguin() {
                   </h1>
                   <h1>
                     {" "}
-                    <span className="font-bold">Wer?:</span> Simon und du
+                    <span className="font-bold">Wer?:</span> Wir beide
+                  </h1>
+                  <h1>
+                    {" "}
+                    <span className="font-bold">Wie?:</span> Ich hole dich ab
                   </h1>
                 </div>
 
