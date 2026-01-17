@@ -73,7 +73,7 @@ export default function Portfolio() {
           <div className=" justify-around lg:w-1/6 w-full flex flex-row lg:items-end gap-10 lg:flex-col items-start lg:mt-0 mt-5 ">
             <div className="flex flex-col gap-2">
               <h1 className="font-bold text-4xl lg:text-7xl flex justify-end animate-on-scroll">
-                1 +
+                5 +
               </h1>
               <p className="dark:text-gray-300 text-gray-700 lg:text-2xl text-lg">
                 Projects
@@ -81,7 +81,7 @@ export default function Portfolio() {
             </div>
             <div className="flex flex-col gap-2">
               <h1 className="font-bold text-4xl lg:text-7xl flex justify-end animate-on-scroll">
-                1.5 +
+                3 +
               </h1>
               <p className="dark:text-gray-300 text-gray-700 text-lg lg:text-2xl">
                 Years Experience

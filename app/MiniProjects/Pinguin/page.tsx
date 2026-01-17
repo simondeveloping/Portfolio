@@ -1,88 +1,163 @@
 "use client";
-import { database } from "@/lib/firebase";
-import PrivateRoute from "../../PrivateRoute";
-import { useState } from "react";
 import ReactConfetti from "react-confetti";
+import { useState } from "react";
 import { useWindowSize } from "react-use";
-import { ref, runTransaction } from "firebase/database";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { database } from "@/lib/firebase";
+import { ref, runTransaction, set } from "firebase/database";
 
 export default function Pinguin() {
-  const [heading, setHeading] = useState("Will you go out with me?");
-  const [noCounter, setNoCounter] = useState(0);
   const [isConfetti, setIsConfetti] = useState(false);
+  const [isDialog, setIsDialog] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { width, height } = useWindowSize();
-
-  const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
+  const [suggestionText, setSuggestionText] = useState("");
+  const [title, setTitle] = useState("You wanna go on a date with me?");
+  const [swtichGif, setSwitchGif] = useState(true);
 
   const yesRef = ref(database, "pinguin/yesCounter");
+  const noRef = ref(database, "pinguin/noCounter");
+  const gegenvorschlag = ref(database, "pinguin/gegenvorschlag");
+  const terminBestätigt = ref(database, "pinguin/terminBestätigt");
 
-  function yes() {
-    setHeading("Yay! Date time 🎉");
+  function handleYes() {
     setIsConfetti(true);
     runTransaction(yesRef, (counter) => (!counter ? 1 : counter + 1));
+    setIsOpen(true);
+    setSwitchGif(true);
+    setTitle("Ich freue mich! :)");
   }
-
-  const noAnswers = [
-    "Please, I'm desperate 😔",
-    "Just press yes 😢",
-    "I'm sorry, I'll stop bothering you 😔",
-    "OKAY IT'S ENOUGH! 😭",
-    "Fuk yu! 😡",
-  ];
-
-  const noRef = ref(database, "pinguin/noCounter");
-
-  function no() {
-    if (noCounter < noAnswers.length) {
-      setHeading(noAnswers[noCounter]);
-    } else {
-      setHeading("You're mean 😭");
-    }
-    setNoCounter(noCounter + 1);
+  function handleNo() {
     runTransaction(noRef, (counter) => (!counter ? 1 : counter + 1));
-
-    moveNoButton();
+    setTitle("Das bist du! Fuk you :(");
+    setSwitchGif(false);
   }
 
-  function moveNoButton() {
-    const buttonWidth = 120; // Geschätzte Button-Breite
-    const buttonHeight = 50; // Geschätzte Button-Höhe
-
-    const maxX = width - buttonWidth - 200; // Verhindert Überlaufen nach rechts
-    const maxY = height - buttonHeight - 200; // Verhindert Überlaufen nach unten
-
-    const randomX = Math.max(0, Math.min(maxX, Math.random() * maxX) / 3);
-    const randomY = Math.max(0, Math.min(maxY, Math.random() * maxY) / 3);
-
-    setNoButtonPosition({ x: randomX, y: randomY });
+  function handleDialog() {
+    setIsDialog(true);
   }
 
+  function handleSendGegenvorschlag() {
+    if (suggestionText.trim() === "") return;
+
+    set(gegenvorschlag, suggestionText).then(() => {
+      setIsDialog(false);
+      setIsOpen(false);
+      setSuggestionText("");
+      alert("Gegenvorschlag gesendet!");
+      setTitle("Ich freue mich! :)");
+    });
+  }
+
+  function submitVorschlag() {
+    setIsOpen(false);
+    setTitle("Ich freue mich! :)");
+    set(terminBestätigt, true);
+    alert("Termin bestätigt!");
+  }
   return (
-    <PrivateRoute>
-      <div>
-        {isConfetti && <ReactConfetti width={width} height={height} />}
-        <div className="bg-[#f0d1e6] z-500 fixed inset-0 flex justify-center items-center flex-col h-screen w-screen">
-          <div className="text-4xl text-black font-bold p-5">{heading}</div>
+    <div className="w-screen h-screen bg-blue-200 flex flex-col items-center justify-center">
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              <div className="text-center flex w-full items-center justify-center">
+                Terminplanung
+              </div>
+            </DialogTitle>
+            <DialogDescription>
+              <div>
+                <div className="gap-4 flex flex-col mb-4 border-2 border-black p-4 rounded-xl mt-4">
+                  <h1>
+                    <span className="font-bold">Wann?:</span> Nächsten Freitag
+                    nach der Arbeit
+                  </h1>
+                  <h1>
+                    {" "}
+                    <span className="font-bold">Wo?:</span> Bei mir zuhause
+                  </h1>
+                  <h1>
+                    {" "}
+                    <span className="font-bold">Was?:</span> Tier Dokumentation
+                    über Fledermäuse schauen
+                  </h1>
+                  <h1>
+                    {" "}
+                    <span className="font-bold">Wer?:</span> Simon und du
+                  </h1>
+                </div>
+
+                <div className="flex flex-row gap-4 justify-center">
+                  <button
+                    className="rounded-xl border-2 border-black p-2 hover:scale-105 transition-all  hover:bg-green-400"
+                    onClick={submitVorschlag}
+                  >
+                    Termin bestätigen
+                  </button>
+                  <button
+                    className="rounded-xl border-2 border-black p-2 hover:scale-105 transition-all hover:bg-blue-400"
+                    onClick={handleDialog}
+                  >
+                    Gegenvorschlag machen
+                  </button>
+                </div>
+                {isDialog && (
+                  <div className="mt-4 gap-4 flex flex-col">
+                    <label className="font-bold">Dein Gegenvorschlag:</label>
+                    <input
+                      type="text"
+                      value={suggestionText}
+                      onChange={(e) => setSuggestionText(e.target.value)}
+                      className="border-2 border-black rounded-xl p-2 w-full"
+                    />
+                    <button
+                      className="rounded-xl border-2 border-black p-2 hover:scale-105 transition-all hover:bg-blue-400"
+                      onClick={handleSendGegenvorschlag}
+                    >
+                      Abschicken
+                    </button>
+                  </div>
+                )}
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      {isConfetti && <ReactConfetti width={width} height={height} />}
+
+      <div className="text-center flex justify-center items-center flex-col ">
+        <h1 className="text-4xl font-bold mb-4">{title}</h1>
+        {swtichGif && (
           <img src="/goOutWithMe.gif" className="max-w-[300px] max-h-[300px]" />
-          <div className="relative w-[30vw] h-40 flex justify-center items-center">
-            <button
-              className="border-2 rounded-xl p-5 border-black hover:scale-105 absolute right-1/2"
-              onClick={yes}
-            >
-              Yes!😃
-            </button>
-            <button
-              className="border-2 rounded-xl p-5 border-black hover:scale-105 absolute transition-all duration-300 left-1/2"
-              onClick={no}
-              style={{
-                transform: `translate(${noButtonPosition.x}px, ${noButtonPosition.y}px)`,
-              }}
-            >
-              No 😥
-            </button>
-          </div>
+        )}
+        {!swtichGif && (
+          <img
+            src="/grinch.gif"
+            className="max-w-[500px] max-h-[500px] h-[80vh]"
+          />
+        )}
+        <div className="flex flex-row gap-4">
+          <button
+            onClick={handleYes}
+            className="px-6 py-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-all"
+          >
+            Yes!
+          </button>
+          <button
+            className="px-6 py-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-all"
+            onClick={handleNo}
+          >
+            No!
+          </button>
         </div>
       </div>
-    </PrivateRoute>
+    </div>
   );
 }
