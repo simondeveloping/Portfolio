@@ -76,7 +76,7 @@ export default function Pinguin() {
                 <div className="gap-4 flex flex-col mb-4 border-2 border-black p-4 rounded-xl mt-4">
                   <h1>
                     <span className="font-bold">Wann?:</span> Samstag oder
-                    Sonntag
+                    Sonntag / 13 Uhr
                   </h1>
                   <h1>
                     {" "}
@@ -150,12 +150,12 @@ export default function Pinguin() {
         <div className="flex flex-row gap-4">
           <button
             onClick={handleYes}
-            className="px-6 py-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-all"
+            className="px-6 py-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-all text-black"
           >
             Yes!
           </button>
           <button
-            className="px-6 py-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-all"
+            className="px-6 py-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-all text-black"
             onClick={handleNo}
           >
             No!
